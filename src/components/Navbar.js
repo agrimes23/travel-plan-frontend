@@ -8,10 +8,10 @@ const Navbar = () => {
     return (
         <>
             <nav className="navbar sticky-top p-3 navbar">
-                <img className="logo" src={ImageLogo} alt="logo-map-planner-img"/>
+                <Link to='/'><img className="logo" src={ImageLogo} alt="logo-map-planner-img"/></Link>
                 <div>
                     <ul className="nav navbar-nav navbar-right text-white mx-3">
-                        <Link className=" text-decoration-none dash" to='/mydashboard'><li>My Dashboard</li></Link>
+                        <Link className=" text-decoration-none dash" to='/dashboard'><li>My Dashboard</li></Link>
                     </ul>
                 </div>
             </nav>
