@@ -21,3 +21,19 @@ nav {
 .logo {
   width: 7em;
 }
+
+/* ---------------------- Dashboard ---------------------- */
+
+.dash-list {
+  max-width: 50vw;
+
+}
+
+.dash-card {
+  max-width: 35vw !important;
+
+}
+.trip-image-dash {
+  object-fit: cover; 
+}
+
