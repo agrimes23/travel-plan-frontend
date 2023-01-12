@@ -12,6 +12,15 @@ code {
     monospace;
 }
 
+.zoom {
+  transition: transform .2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  cursor: pointer;
+}
+
 /* ----------------------- NavBar ----------------------- */
 
 nav {
@@ -28,12 +37,21 @@ nav {
   width: 75vw !important;
 }
 
+.dash-list, h4 {
+  font-size: 0.9em;
+}
+
+.dash-list, h3 {
+  font-size: 1.3em;
+}
+
 .dash-card {
   width: 400px !important;
 
 }
 
 .trip-image-dash {
-  object-fit: cover; 
+  height: 18vw;
+  object-fit: cover;
 }
 
