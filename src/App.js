@@ -1,10 +1,21 @@
-
+import Dashboard from './components/Dashboard'
+import { Route, Routes, Link } from 'react-router-dom'
+import Navbar from './components/Navbar';
+import { useEffect } from 'react';
 
 function App() {
+
+
+  useEffect(() => {
+
+  }, [])
+
   return (
     <>
-      <h1> hello there </h1>
-    
+      <Navbar />
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />}/>
+      </Routes>
     </>
   )
 }
