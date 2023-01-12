@@ -25,14 +25,14 @@ nav {
 /* ---------------------- Dashboard ---------------------- */
 
 .dash-list {
-  max-width: 50vw;
-
+  width: 75vw !important;
 }
 
 .dash-card {
-  max-width: 35vw !important;
+  width: 400px !important;
 
 }
+
 .trip-image-dash {
   object-fit: cover; 
 }
