@@ -55,3 +55,23 @@ nav {
   object-fit: cover;
 }
 
+/* --------------------- Trip Show Page --------------------- */
+.hotel-btn {
+  background-color: purple;
+  color: white;
+}
+
+.transport-btn {
+  background-color: rgb(0, 56, 53);
+  color: white;
+}
+
+.activity-btn {
+  background-color: rgb(180, 3, 3);
+  color: white;
+}
+
+.trip-show-img {
+  object-fit: cover;
+  height: 300px;
+}

@@ -1,8 +1,14 @@
 import { useState, useEffect, useCallback } from 'react'
-import useNavigate from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 
 const Dashboard = () => {
+
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate("/tripdetails")
+    }
 
     return (
         <>
@@ -30,36 +36,36 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </div>
+            
+                            <div onClick={handleClick} className='m-3 zoom card dash-card border d-flex shadow-sm rounded'>
+                                <img className="trip-image-dash" src="https://petkeen.com/wp-content/uploads/2020/06/black-chantilly-tiffany-cat-home_Anna-Krivitskaya_Shutterstock.jpg" />
+                                <div className="d-flex p-3 flex-row justify-content-around py-4">
+                                    <div className="text-left">
+                                        <h3>Place Name</h3>
+                                    </div>
+                                    
+                                    <div className="text-left">
+                                        <h4>Dates</h4>
+                                        <h4>Estimated Budget</h4>
+                                    </div>
+                                </div>
+                            </div>
 
+                        <div className='m-3 zoom card dash-card border d-flex shadow-sm rounded'>
+                            <img className="trip-image-dash" src="https://petkeen.com/wp-content/uploads/2020/06/black-chantilly-tiffany-cat-home_Anna-Krivitskaya_Shutterstock.jpg" />
+                            <div className="d-flex p-3 flex-row justify-content-around py-4">
+                                <div className="text-left">
+                                    <h3>Place Name</h3>
+                                </div>
+                                
+                                <div className="text-left">
+                                    <h4>Dates</h4>
+                                    <h4>Estimated Budget</h4>
+                                </div>
+                            </div>
+
+                        </div>
                         
-                        <div className='m-3 zoom card dash-card border d-flex shadow-sm rounded'>
-                            <img className="trip-image-dash" src="https://petkeen.com/wp-content/uploads/2020/06/black-chantilly-tiffany-cat-home_Anna-Krivitskaya_Shutterstock.jpg" />
-                            <div className="d-flex p-3 flex-row justify-content-around py-4">
-                                <div className="text-left">
-                                    <h3>Place Name</h3>
-                                </div>
-                                
-                                <div className="text-left">
-                                    <h4>Dates</h4>
-                                    <h4>Estimated Budget</h4>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className='m-3 zoom card dash-card border d-flex shadow-sm rounded'>
-                            <img className="trip-image-dash" src="https://petkeen.com/wp-content/uploads/2020/06/black-chantilly-tiffany-cat-home_Anna-Krivitskaya_Shutterstock.jpg" />
-                            <div className="d-flex p-3 flex-row justify-content-around py-4">
-                                <div className="text-left">
-                                    <h3>Place Name</h3>
-                                </div>
-                                
-                                <div className="text-left">
-                                    <h4>Dates</h4>
-                                    <h4>Estimated Budget</h4>
-                                </div>
-                            </div>
-
-                        </div>
                         <div className='m-3 zoom card dash-card border d-flex shadow-sm rounded'>
                             <img className="trip-image-dash thumbnail" src="https://c8.alamy.com/comp/JF0070/map-of-france-as-an-overview-map-in-pastel-green-JF0070.jpg" />
                             <div className="d-flex p-3 flex-row justify-content-around py-4">
