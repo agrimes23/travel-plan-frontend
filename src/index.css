@@ -73,5 +73,15 @@ nav {
 
 .trip-show-img {
   object-fit: cover;
-  height: 300px;
+  height: 200px;
+}
+
+/* ------------------------- Tabs ------------------------- */
+
+.show-tab {
+  display: flex;
+}
+
+.hide-tab {
+  display: none;
 }
