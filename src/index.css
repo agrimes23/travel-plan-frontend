@@ -77,3 +77,11 @@ nav {
 }
 
 /* ------------------------- Tabs ------------------------- */
+
+.show-tab {
+  display: flex;
+}
+
+.hide-tab {
+  display: none;
+}
