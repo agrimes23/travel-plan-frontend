@@ -7,16 +7,24 @@ const TripShowPage = () => {
     return (
         <>
             <div className="container-fluid">
-                <div className="text-center m-5 p-2">
-                    <h1>Berlin, Germany</h1>
-                    <h3>Oct 3 - Oct 10</h3>
-                    <h3>$1,000 - $3,000</h3>
-                    <button className="btn my-2">(Edit Location & Dates)</button>
+                <div className='container row m-auto mt-5 d-flex justify-content-center'>
+                     <div className='col d-flex justify-content-center'>
+                        <img className="trip-show-img rounded-circle" src="https://cdn1.matadornetwork.com/blogs/1/2022/05/social-Expat-in-Germany-1401491837.jpeg"></img> 
+                    </div>
+                    <div className="col d-flex justify-content-center text-center mt-5 p-2">
+                        <div className='row'>
+                            <h1>Berlin, Germany</h1>
+                            <h3>Oct 3 - Oct 10</h3>
+                            <h3>$1,000 - $3,000</h3>
+                            <button className="btn my-2">(Edit Location & Dates)</button>
+                        </div>
+                    </div>
+                    
                 </div>
                 <div className="container-fluid justify-content-center d-flex m-auto">
                     <div className=" border p-5 rounded w-75">
                         <div className="w-100 d-flex justify-content-center">
-                            <img className="trip-show-img" src="https://cdn1.matadornetwork.com/blogs/1/2022/05/social-Expat-in-Germany-1401491837.jpeg"></img>
+                            
                         </div>
                         <hr className="my-5"></hr>
                         
