@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import useNavigate from 'react-router-dom'
-
+import IndexTabs from './IndexTabs'
 
 const TripShowPage = () => {
 
@@ -24,7 +24,7 @@ const TripShowPage = () => {
                 <div className="container-fluid justify-content-center d-flex m-auto">
                     <div className=" border p-5 rounded w-75">
                         <div className="w-100 d-flex justify-content-center">
-                            
+                        <IndexTabs/>
                         </div>
                         <hr className="my-5"></hr>
                         
