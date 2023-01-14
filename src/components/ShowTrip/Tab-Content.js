@@ -111,42 +111,49 @@ const TabContent = (props) => {
         <>
             <div className={ props.active === "Hotel" ? "show-tab" : "hide-tab"}>
                     <div>
-                        {hotelOptions.map((hotel) => {
-                                    return (
-                                        <>
-                                            <div>
-                                                <h4 className="d-block">{hotel.hotelName}</h4>
-                                                <h4 className="d-block">${hotel.price}</h4>
-                                            </div>
-                                        </>
-                                    )
-                                })}
+                        <form className="d-flex justify-content-center row">
+                            <select className="m-3" size="5">
+                            {hotelOptions.map((hotel) => {
+                                        return (
+                                            <>
+                                                <option className="d-block">{hotel.hotelName}, ${hotel.price}, {hotel.stayDate}</option>
+                                            </>
+                                        )
+                                    })}
+                            </select>
+                            <div className="text-center">
+                                <input className="btn btn-info m-3" type="submit" value="add to itinerary"/>
+                            </div>
+                        </form>
+                        <hr/>
                         <div className="d-inline-block m-3">
                             <h3>Add a Hotel to the List Options:</h3>
                             <div>
                                 <form>
-                                    <div>
-                                        <div className="d-inline-block row m-2">
+                                    <div className='d-flex'>
+                                        <div className="flex-fill row m-2">
                                             <label htmlFor='hotel-name'>Hotel Name</label>
                                             <input placeholder="write hotel name"  />
                                         </div>
-                                        <div className="d-inline-block row m-2">
+                                        <div className="flex-fill row m-2">
                                             <label htmlFor='check-in-date'>Check-in Date</label>
                                             <input placeholder="date of check-in" />
                                         </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='check-out-date'>Check-out Date</label>
-                                            <input placeholder="date of check-out" />
-                                        </div>
-                                        <div className="d-inline-block row m-2">
+                                        <div className="flex-fill row m-2">
                                             <label htmlFor='price'>Price for the Night</label>
                                             <input placeholder="price for the night" />
                                         </div>
-                                        <div className="d-inline-block row m-2">
+                                    </div>
+                                    <div className='d-flex'>
+                                    <div className="flex-fill row m-2">
+                                            <label htmlFor='link'>Site Link</label>
+                                            <input placeholder="Link" />
+                                        </div>
+                                        <div className="flex-fill row m-2">
                                             <label htmlFor='checkin time'>Check-in time</label>
                                             <input placeholder="check-in time" />
                                         </div>
-                                        <div className="d-inline-block row m-2">
+                                        <div className="flex-fill row m-2">
                                             <label htmlFor='checkout time'>Check-out time</label>
                                             <input placeholder="check-outs time" />
                                         </div>
@@ -272,24 +279,23 @@ const TabContent = (props) => {
                             <h3>Add Food to the List Options:</h3>
                             <div>
                                 <form>
-                                    <div>
-                                        <div className="d-inline-block row m-2">
+                                    <div className="d-flex">
+                                        <div className="flex-fillrow m-2">
                                             <label></label>
                                             <input placeholder='food place name'/>
                                         </div>
-                                        <div className="d-inline-block row m-2">
+                                        <div className="flex-fill row m-2">
                                             <label></label>
                                             <input placeholder='date' />
                                         </div>
-                                        <div className="d-inline-block row m-2">
+                                        <div className="flex-fill row m-2">
                                             <label></label>
                                             <input placeholder='estimated price'/>
                                         </div>
-                                        <div className="d-inline-block row m-2">
+                                        <div className="flex-fill row m-2">
                                             <label></label>
                                             <input placeholder='reservation time'/>
                                         </div>
-                                        
                                     </div>
                                     <button className="btn activity-btn my-3">Add Food Options</button>
                                 </form>

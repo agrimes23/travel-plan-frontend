@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+select {
+  width: 400px !important;
+}
+
 .zoom {
   transition: transform .2s; /* Animation */
 }

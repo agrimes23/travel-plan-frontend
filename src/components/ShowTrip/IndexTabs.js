@@ -51,7 +51,7 @@ const IndexTabs = () => {
             </div>
             {/* Tab Content */}
             <div className=" tab-content d-inline-block mx-2 mt-5 row">
-                <h5>Please choose from current options:</h5>
+                <h5>Please choose from current options to add to the Itinerary:</h5>
                     <TabContent active={active} />
             </div>
         </div>
