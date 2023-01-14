@@ -121,6 +121,40 @@ const TabContent = (props) => {
                                         </>
                                     )
                                 })}
+                        <div className="d-inline-block m-3">
+                            <h3>Add a Hotel to the List Options:</h3>
+                            <div>
+                                <form>
+                                    <div>
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='hotel-name'>Hotel Name</label>
+                                            <input placeholder="write hotel name"  />
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='check-in-date'>Check-in Date</label>
+                                            <input placeholder="date of check-in" />
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='check-out-date'>Check-out Date</label>
+                                            <input placeholder="date of check-out" />
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='price'>Price for the Night</label>
+                                            <input placeholder="price for the night" />
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='checkin time'>Check-in time</label>
+                                            <input placeholder="check-in time" />
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='checkout time'>Check-out time</label>
+                                            <input placeholder="check-outs time" />
+                                        </div>
+                                    </div>
+                                    <button className="btn hotel-btn my-3">Add Hotel Options</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className={ props.active === "Transport" ? "show-tab" : "hide-tab"}>
@@ -135,6 +169,41 @@ const TabContent = (props) => {
                                         </>
                                     )
                                 })}
+                        
+                        <div className="d-inline-block m-3">                                 
+                            <h3>Add Transportation to the List Options:</h3>
+                            <div>
+                                <form>
+                                    <div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='type of transportation'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='departure date'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='arrival date' />
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='price'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='boarding time'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='arrival time'/>
+                                        </div>
+                                    </div>
+                                    <button className="btn transport-btn my-3">Add Transport Options</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className={ props.active === "Activities" ? "show-tab" : "hide-tab"}>
@@ -149,6 +218,41 @@ const TabContent = (props) => {
                                         </>
                                     )
                                 })}
+                        <div className="d-inline-block m-3">
+                            <h3>Add an Activity to the List Options:</h3>
+                            <div>
+                                <form>
+                                    <div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='activity name'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='start date'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='end date'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='price'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='start time'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='end time'/>
+                                        </div>
+                                    </div>
+                                    <button className="btn activity-btn my-3">Add Activity Options</button>
+                                </form>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div className={ props.active === "Food" ? "show-tab" : "hide-tab"}>
@@ -163,6 +267,35 @@ const TabContent = (props) => {
                                         </>
                                     )
                                 })}
+
+                        <div className="d-inline-block m-3">
+                            <h3>Add Food to the List Options:</h3>
+                            <div>
+                                <form>
+                                    <div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='food place name'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='date' />
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='estimated price'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label></label>
+                                            <input placeholder='reservation time'/>
+                                        </div>
+                                        
+                                    </div>
+                                    <button className="btn activity-btn my-3">Add Food Options</button>
+                                </form>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
         </>
