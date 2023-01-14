@@ -3,7 +3,7 @@ import { Route, Routes, Link } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import { useEffect } from 'react';
 import Dashboard from './components/Dashboard'
-import TripShowPage from './components/TripShowPage'
+import TripShowPage from './components/ShowTrip/TripShowPage'
 
 function App() {
 
