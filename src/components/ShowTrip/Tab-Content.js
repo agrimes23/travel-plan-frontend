@@ -106,6 +106,16 @@ const TabContent = (props) => {
     },
     ]
 
+    const itineraryList = []
+
+    const addToItinerary = (hotel) => {
+        if (props.active === "Hotel") {
+            itineraryList.push(hotel)
+        } else if (props.active === "Transport") {
+            itineraryList.push()
+        }
+    }
+
 
     return (
         <>
@@ -122,7 +132,7 @@ const TabContent = (props) => {
                                     })}
                             </select>
                             <div className="text-center">
-                                <input className="btn btn-info m-3" type="submit" value="add to itinerary"/>
+                                <input className="btn btn-info m-3" onClick={() => addToItinerary()} type="submit" value="add to itinerary"/>
                             </div>
                         </form>
                         <hr/>
