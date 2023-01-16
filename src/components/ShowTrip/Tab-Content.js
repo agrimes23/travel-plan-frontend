@@ -1,110 +1,14 @@
 import { useState, useEffect, useCallback } from 'react'
 import useNavigate from 'react-router-dom'
-
+import HotelOptions from './HotelOptions'
+import TransportOptions from './TransportOptions'
+import ActivityOptions from './ActivityOptions'
+import FoodOptions from './FoodOptions'
 
 const TabContent = (props) => {
 
-
-    const hotelOptions = [{
-        hotelName: "Stay Inn",
-        stayDate: "10/3/2023",
-        deptDate: "10/4/2023",
-        price: 94.99,
-        checkIn: "16:00",
-        checkOut: "11:00"
-    },
-    {
-        hotelName: "America Inn",
-        stayDate: "10/3/2023",
-        deptDate: "10/4/2023",
-        price: 150.00,
-        checkIn: "17:00",
-        checkOut: "12:00"
-    },
-    {
-        hotelName: "Nice Stay Hotel",
-        stayDate: "10/3/2023",
-        deptDate: "10/4/2023",
-        price: 50.00,
-        checkIn: "15:00",
-        checkOut: "10:00"
-    },
-    ]
-
-    const transportOptions = [{
-        type: "airplane",
-        deptDate: "10/3/2023",
-        arrivalDate: "10/3/2023",
-        price: 800.00,
-        boardTime: "5:00",
-        stopTime: "10:00"
-    },
-    {
-        type: "airplane",
-        deptDate: "10/3/2023",
-        arrivalDate: "10/3/2023",
-        price: 1500.00,
-        boardTime: "10:00",
-        stopTime: "15:00"
-    },
-    {
-        type: "bus",
-        deptDate: "10/3/2023",
-        arrivalDate: "10/3/2023",
-        price: 2.50,
-        boardTime: "16:00",
-        stopTime: "16:30"
-    },
-    ]
-
-    const actOptions = [{
-        name: "Go to the market",
-        startDate: "10/3/2023",
-        endDate: "10/3/2023",
-        price: 40.00,
-        startTime: "17:00",
-        endTime: "18:00"
-    },
-    {
-        name: "Flower Garden",
-        startDate: "10/3/2023",
-        endDate: "10/3/2023",
-        price: 10.50,
-        startTime: "10:00",
-        endTime: "15:00"
-    },
-    {
-        name: "Berlin walking tour",
-        startDate: "10/3/2023",
-        endDate: "10/3/2023",
-        price: 0.00,
-        startTime: "16:00",
-        endTime: "16:30"
-    },
-    ]
-
-    const foodOptions = [{
-        name: "restaurant le chez",
-        date: "10/3/2023",
-        highPrice: 40.00,
-        lowPrice: 30.00,
-        rezTime: "17:00",
-    },
-    {
-        name: "bob's pizza place",
-        date: "10/3/2023",
-        highPrice: 15.00,
-        lowPrice: 10.00,
-        rezTime: "19:00",
-    },
-    {
-        name: "cafe lily",
-        date: "10/3/2023",
-        highPrice: 20.00,
-        lowPrice: 5.00,
-        rezTime: "10:00",
-    },
-    ]
+    
+    
 
     const itineraryList = []
 
@@ -121,20 +25,7 @@ const TabContent = (props) => {
         <>
             <div className={ props.active === "Hotel" ? "show-tab" : "hide-tab"}>
                     <div>
-                        <form className="d-flex justify-content-center row">
-                            <select className="m-3" size="5">
-                            {hotelOptions.map((hotel) => {
-                                        return (
-                                            <>
-                                                <option className="d-block">{hotel.hotelName}, ${hotel.price}, {hotel.stayDate}</option>
-                                            </>
-                                        )
-                                    })}
-                            </select>
-                            <div className="text-center">
-                                <input className="btn btn-info m-3" onClick={() => addToItinerary()} type="submit" value="add to itinerary"/>
-                            </div>
-                        </form>
+                        <HotelOptions active={props.active}/>
                         <hr/>
                         <div className="d-inline-block m-3">
                             <h3>Add a Hotel to the List Options:</h3>
@@ -143,7 +34,7 @@ const TabContent = (props) => {
                                     <div className='d-flex'>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='hotel-name'>Hotel Name</label>
-                                            <input placeholder="write hotel name"  />
+                                            <input placeholder="hotel name"  />
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='check-in-date'>Check-in Date</label>
@@ -165,7 +56,7 @@ const TabContent = (props) => {
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='checkout time'>Check-out time</label>
-                                            <input placeholder="check-outs time" />
+                                            <input placeholder="check-out time" />
                                         </div>
                                     </div>
                                     <button className="btn hotel-btn my-3">Add Hotel Options</button>
@@ -176,16 +67,7 @@ const TabContent = (props) => {
                 </div>
                 <div className={ props.active === "Transport" ? "show-tab" : "hide-tab"}>
                     <div>
-                        {transportOptions.map((transport) => {
-                                    return (
-                                        <>
-                                            <div>
-                                                <h4 className="d-block">{transport.type}</h4>
-                                                <h4 className="d-block">${transport.price}</h4>
-                                            </div>
-                                        </>
-                                    )
-                                })}
+                       <TransportOptions />
                         
                         <div className="d-inline-block m-3">                                 
                             <h3>Add Transportation to the List Options:</h3>
@@ -193,27 +75,45 @@ const TabContent = (props) => {
                                 <form>
                                     <div>
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
-                                            <input placeholder='type of transportation'/>
+                                            <label htmlFor='type of transport'>Type of Transport</label>
+                                            <select className="d-inline-block row m-2 w-75">
+                                                <option>Type of Transport</option>
+                                                <option>Airplane</option>
+                                                <option>Bus</option>
+                                                <option>Boat</option>
+                                                <option>Train</option>
+                                                <option>Subway</option>
+                                                <option>Taxi</option>
+                                                <option>Bike</option>
+                                                <option>Scooter</option>
+                                                <option>Walking</option>
+                                                <option>Other</option>
+                                            </select>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
+                                            <label htmlFor='Site Link'>Site Link</label>
+                                            <input placeholder='Site Link'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='departure date'>Departure Date</label>
                                             <input placeholder='departure date'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
+                                            <label htmlFor='Arrival Date'>Arrival Date</label>
                                             <input placeholder='arrival date' />
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
+                                            <label htmlFor='price'>Price</label>
                                             <input placeholder='price'/>
                                         </div>
+
+                                        {/* Only show boarding time input if airplane, bus, boat, train */}
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
+                                            <label htmlFor='Boarding Time'>Boarding Time</label>
                                             <input placeholder='boarding time'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
+                                            <label htmlFor='Arrival Time'>Arrival Time</label>
                                             <input placeholder='arrival time'/>
                                         </div>
                                     </div>
@@ -225,44 +125,35 @@ const TabContent = (props) => {
                 </div>
                 <div className={ props.active === "Activities" ? "show-tab" : "hide-tab"}>
                     <div>
-                        {actOptions.map((activity) => {
-                                    return (
-                                        <>
-                                            <div>
-                                                <h4 className="d-block">{activity.name}</h4>
-                                                <h4 className="d-block">${activity.price}</h4>
-                                            </div>
-                                        </>
-                                    )
-                                })}
+                        <ActivityOptions/>
                         <div className="d-inline-block m-3">
                             <h3>Add an Activity to the List Options:</h3>
                             <div>
                                 <form>
                                     <div>
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
+                                            <label htmlFor='Activty Name'>Activty Name</label>
                                             <input placeholder='activity name'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
+                                            <label htmlFor='Start Date'>Start Date</label>
                                             <input placeholder='start date'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
-                                            <input placeholder='end date'/>
+                                            <label htmlFor='Site Link'>Site Link</label>
+                                            <input placeholder='Site Link'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
+                                            <label htmlFor='Price'>Price</label>
                                             <input placeholder='price'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
+                                            <label htmlFor='Start Time'>Start Time</label>
                                             <input placeholder='start time'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label></label>
-                                            <input placeholder='end time'/>
+                                            <label htmlFor='End Time'>End Time</label>
+                                            <input placeholder='End Time'/>
                                         </div>
                                     </div>
                                     <button className="btn activity-btn my-3">Add Activity Options</button>
@@ -274,37 +165,32 @@ const TabContent = (props) => {
                 </div>
                 <div className={ props.active === "Food" ? "show-tab" : "hide-tab"}>
                     <div>
-                        {foodOptions.map((food) => {
-                                    return (
-                                        <>
-                                            <div>
-                                                <h4 className="d-block">{food.name}</h4>
-                                                <h4 className="d-block">${food.highPrice}</h4>
-                                            </div>
-                                        </>
-                                    )
-                                })}
+                        <FoodOptions />
 
                         <div className="d-inline-block m-3">
                             <h3>Add Food to the List Options:</h3>
                             <div>
                                 <form>
-                                    <div className="d-flex">
-                                        <div className="flex-fillrow m-2">
-                                            <label></label>
+                                    <div className="">
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='Food Place Name'>Food Place Name</label>
                                             <input placeholder='food place name'/>
                                         </div>
-                                        <div className="flex-fill row m-2">
-                                            <label></label>
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='Date'>Date</label>
                                             <input placeholder='date' />
                                         </div>
-                                        <div className="flex-fill row m-2">
-                                            <label></label>
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='Estimated Price'>Est. Price</label>
                                             <input placeholder='estimated price'/>
                                         </div>
-                                        <div className="flex-fill row m-2">
-                                            <label></label>
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='Reservation Time'>Reservation Time</label>
                                             <input placeholder='reservation time'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
+                                            <label htmlFor='Site Link'>Site Link</label>
+                                            <input placeholder='Site Link'/>
                                         </div>
                                     </div>
                                     <button className="btn activity-btn my-3">Add Food Options</button>
