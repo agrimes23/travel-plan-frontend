@@ -22,7 +22,11 @@ const TripShowPage = () => {
                     
                 </div>
                 <div className="container-fluid justify-content-center d-flex mb-5 m-auto">
-                    <div className=" border p-5 rounded w-75">
+                    
+                    <div className="border p-5 rounded w-75">
+                        <div className="">
+                            <h2 className="">Est. Total: $</h2>
+                        </div>
                         <div className="w-100 d-flex justify-content-center">
                         <IndexTabs/>
                         </div>
