@@ -45,7 +45,7 @@ const HotelOptions = (props) => {
                         })}
                 </select>
                 <div className="text-center">
-                    <input className="btn btn-info m-3" onClick={() => addToItinerary()} type="submit" value="add to itinerary"/>
+                    <input className="btn btn-info m-3" type="submit" value="add to itinerary"/>
                 </div>
             </form>
         </>

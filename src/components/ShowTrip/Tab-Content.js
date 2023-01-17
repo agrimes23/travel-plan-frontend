@@ -38,7 +38,7 @@ const TabContent = (props) => {
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='check-in-date'>Check-in Date</label>
-                                            <input placeholder="date of check-in" />
+                                            <input type='date' placeholder="date of check-in" />
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='price'>Price for the Night</label>
@@ -51,12 +51,12 @@ const TabContent = (props) => {
                                             <input placeholder="Link" />
                                         </div>
                                         <div className="flex-fill row m-2">
-                                            <label htmlFor='checkin time'>Check-in time</label>
-                                            <input placeholder="check-in time" />
+                                            <label htmlFor='checkin time'>Check-in time (hh:mm AM/PM)</label>
+                                            <input type='time' placeholder="check-in time" />
                                         </div>
                                         <div className="flex-fill row m-2">
-                                            <label htmlFor='checkout time'>Check-out time</label>
-                                            <input placeholder="check-out time" />
+                                            <label htmlFor='checkout time'>Check-out time (hh:mm AM/PM)</label>
+                                            <input type='time' placeholder="check-out time" />
                                         </div>
                                     </div>
                                     <button className="btn hotel-btn my-3">Add Hotel Options</button>
@@ -96,11 +96,11 @@ const TabContent = (props) => {
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='departure date'>Departure Date</label>
-                                            <input placeholder='departure date'/>
+                                            <input type='date' placeholder='departure date'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='Arrival Date'>Arrival Date</label>
-                                            <input placeholder='arrival date' />
+                                            <input type='date' placeholder='arrival date' />
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='price'>Price</label>
@@ -109,12 +109,12 @@ const TabContent = (props) => {
 
                                         {/* Only show boarding time input if airplane, bus, boat, train */}
                                         <div className="d-inline-block row m-2">
-                                            <label htmlFor='Boarding Time'>Boarding Time</label>
-                                            <input placeholder='boarding time'/>
+                                            <label htmlFor='Boarding Time'>Boarding Time (hh:mm AM/PM)</label>
+                                            <input type='time' placeholder='boarding time'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label htmlFor='Arrival Time'>Arrival Time</label>
-                                            <input placeholder='arrival time'/>
+                                            <label htmlFor='Arrival Time'>Arrival Time (hh:mm AM/PM)</label>
+                                            <input type='time' placeholder='arrival time'/>
                                         </div>
                                     </div>
                                     <button className="btn transport-btn my-3">Add Transport Options</button>
@@ -137,7 +137,7 @@ const TabContent = (props) => {
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='Start Date'>Start Date</label>
-                                            <input placeholder='start date'/>
+                                            <input type='date' placeholder='start date'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='Site Link'>Site Link</label>
@@ -148,12 +148,12 @@ const TabContent = (props) => {
                                             <input placeholder='price'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label htmlFor='Start Time'>Start Time</label>
-                                            <input placeholder='start time'/>
+                                            <label htmlFor='Start Time'>Start Time (hh:mm AM/PM)</label>
+                                            <input type='time' placeholder='start time'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label htmlFor='End Time'>End Time</label>
-                                            <input placeholder='End Time'/>
+                                            <label htmlFor='End Time'>End Time (hh:mm AM/PM)</label>
+                                            <input type='time' placeholder='End Time'/>
                                         </div>
                                     </div>
                                     <button className="btn activity-btn my-3">Add Activity Options</button>
@@ -178,15 +178,15 @@ const TabContent = (props) => {
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='Date'>Date</label>
-                                            <input placeholder='date' />
+                                            <input type='date' placeholder='date' />
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='Estimated Price'>Est. Price</label>
                                             <input placeholder='estimated price'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
-                                            <label htmlFor='Reservation Time'>Reservation Time</label>
-                                            <input placeholder='reservation time'/>
+                                            <label htmlFor='Reservation Time'>Reservation Time (hh:mm AM/PM)</label>
+                                            <input type='time' placeholder='reservation time'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='Site Link'>Site Link</label>
