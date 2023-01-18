@@ -7,22 +7,19 @@ const FoodOptions = () => {
     const foodOptions = [{
         name: "restaurant le chez",
         date: "10/3/2023",
-        highPrice: 40.00,
-        lowPrice: 30.00,
+        price: 40.00,
         rezTime: "17:00",
     },
     {
         name: "bob's pizza place",
         date: "10/3/2023",
-        highPrice: 15.00,
-        lowPrice: 10.00,
+        price: 15.00,
         rezTime: "19:00",
     },
     {
         name: "cafe lily",
         date: "10/3/2023",
-        highPrice: 20.00,
-        lowPrice: 5.00,
+        price: 20.00,
         rezTime: "10:00",
     },
     ] 
@@ -34,7 +31,7 @@ const FoodOptions = () => {
                     {foodOptions.map((food) => {
                         return (
                             <>
-                                <option className="d-block">{food.date}: {food.name}, ${(food.highPrice).toFixed(2)}</option>
+                                <option className="d-block">{food.date}: {food.name}, ${(food.price).toFixed(2)}</option>
                             </>
                         )
                     })}
