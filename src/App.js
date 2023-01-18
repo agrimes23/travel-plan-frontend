@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import { useEffect } from 'react';
 import Dashboard from './components/Dashboard'
 import TripShowPage from './components/ShowTrip/TripShowPage'
+import HomePage from './components/HomePage';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
+        <Route path="/" element={<HomePage/>}/>
         <Route path="/dashboard" element={<Dashboard />}/>
         <Route path="/tripdetails" element={<TripShowPage />} />
       </Routes>

@@ -35,6 +35,27 @@ nav {
   width: 7em;
 }
 
+/* ---------------------- Home Page ---------------------- */
+
+.carl-img {
+  object-fit: cover;
+  height: 50vh;
+  
+}
+
+.carl-div {
+  border: 5px rgb(3, 90, 78) solid;
+}
+
+.sign-up-btn {
+ font-size: 2em;
+ padding: 8%;
+}
+
+.login-btn {
+  font-size: 1.3em;
+}
+
 /* ---------------------- Dashboard ---------------------- */
 
 .dash-list {
