@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
 }
 
 code {
@@ -48,12 +50,36 @@ nav {
 }
 
 .sign-up-btn {
- font-size: 2em;
- padding: 8%;
+ font-size: 1.4em;
+ padding: 2%;
+}
+
+.sign-up-title {
+  font-size: 2em;
+}
+
+.log-in-title {
+  font-size: 1.6em;
 }
 
 .login-btn {
-  font-size: 1.3em;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+/* ---------------------- Signup ---------------------- */
+
+.signup-container {
+  background-color: rgb(114, 151, 139);
+  width: 700px;
+  height: 400px;
+  border-radius: 5%;
+  z-index: 2;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  margin-top: -50px;
+  margin-left: -50px;
 }
 
 /* ---------------------- Dashboard ---------------------- */

@@ -1,8 +1,14 @@
 import { useState, useEffect, useCallback } from 'react'
-import useNavigate from 'react-router-dom'
+import { useNavigate, redirect } from 'react-router-dom'
+
 
 
 const HomePage = () => {
+    const navigate = useNavigate()
+
+    const signUpRedirect = () => {
+        navigate("/signup")
+    }
 
     return (
         <>
@@ -32,14 +38,15 @@ const HomePage = () => {
                         </a>
                     </div>
                 </div>
-                <div className="d-flex col justify-content-center">
+                <div className="d-flex row justify-content-center">
                     <div className="m-5 text-center">
-                        <h3 className="sign-up-title">Start planning your trips!</h3>
-                        <button className="btn btn-info sign-up-btn">Sign up</button>
+                        <h3 className="sign-up-title mb-5">Start planning your trips!</h3>
+                        <button onClick={signUpRedirect} className="btn btn-info sign-up-btn">Sign up</button>
                     </div>
+                    <hr className="w-50" />
                     <div className="m-5 text-center">
                         <h5 className="log-in-title">Already got an account?</h5>
-                        <button className="btn btn-info login-btn">Login</button>
+                        <a href="/login" className="login-btn">Login to your Account</a>
                     </div>
                 </div>
             </div>
