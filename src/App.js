@@ -16,7 +16,7 @@ function App() {
 
   // get user info + all saved plans
   const getUserPlans = (data) => {
-    axios.get('http://localhost:8080/api/v1/userplans/' + data.id)
+    axios.get('https://travel-planning-backend.herokuapp.com/api/v1/userplans/' + data.id)
     .then((res) => setUserPlans(res.data),
     (err) => console.log(err),
     
@@ -25,20 +25,20 @@ function App() {
 
   // create new user in db
   const handleCreate = (addUser) => {
-    axios.post('http://localhost:8080/api/v1/userplans', addUser)
+    axios.post('https://travel-planning-backend.herokuapp.com/api/v1/userplans', addUser)
     .then((res) => {
       getUserPlans(res.data)
     })
   }
 
   const handleLogin = (data) => {
-    axios.post('http://localhost:8080/api/v1/userplans/login', data)
+    axios.post('https://travel-planning-backend.herokuapp.com/api/v1/userplans/login', data)
     .then(response => setUserPlans(response.data))
   }
 
   //   // might need to redo
     const handleDelete = (event) => {
-      axios.delete('http://localhost:8080/api/v1/userplans/' + event)
+      axios.delete('https://travel-planning-backend.herokuapp.com/api/v1/userplans/' + event)
       .then((response) => {
         getUserPlans()
       })
@@ -46,7 +46,7 @@ function App() {
   
   //   // updates notes or state in the database
   //   const handleUpdate = (updatePlan) => {
-  //     axios.put('http://localhost:8080/api/v1/userplans/' + updatePlan.id, updatePlan)
+  //     axios.put('https://travel-planning-backend.herokuapp.com/api/v1/userplans/' + updatePlan.id, updatePlan)
   //     .then((response) => {
   //       getUserPlans()
   //     })
