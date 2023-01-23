@@ -3,7 +3,7 @@ import useNavigate from 'react-router-dom';
 import styled from 'styled-components';
 import TabContent from './Tab-Content';
 
-const IndexTabs = () => {
+const IndexTabs = (props) => {
 
     const tabHeaders = ["Hotel", "Transport", "Activities", "Food"]
 
@@ -52,7 +52,7 @@ const IndexTabs = () => {
             {/* Tab Content */}
             <div className=" tab-content d-inline-block mx-2 mt-5 row">
                 <h5>Choose from current options to add to your Itinerary:</h5>
-                    <TabContent active={active} />
+                    <TabContent tripPlans={props.tripPlans} active={active} />
             </div>
         </div>
         </>

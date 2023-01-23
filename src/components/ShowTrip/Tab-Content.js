@@ -67,7 +67,7 @@ const TabContent = (props) => {
                 </div>
                 <div className={ props.active === "Transport" ? "show-tab" : "hide-tab"}>
                     <div>
-                       <TransportOptions />
+                       <TransportOptions tripPlans={props.tripPlans} />
                         
                         <div className="d-inline-block m-3">                                 
                             <h3>Add Transportation to the List Options:</h3>
