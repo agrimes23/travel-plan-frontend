@@ -4,12 +4,25 @@ import { useNavigate, Link } from 'react-router-dom'
 
 const Dashboard = (props) => {
 
-
+    const [showModel, setShowModel] = useState("hide-tab")
     const navigate = useNavigate()
 
     const handleClick = (plan) => {
         props.setTripPlans(plan)
         navigate("/tripdetails/")
+    }
+
+    const handleDeleteClick = () => {
+        setShowModel("show-tab arrange-Model")
+    }
+
+    const yesClick = () => {
+        props.handleDelete(props.userPlans.id)
+        navigate("/")
+    }
+
+    const noClick = () => {
+        setShowModel("hide-tab")
     }
 
     useEffect(() => {
@@ -29,9 +42,6 @@ const Dashboard = (props) => {
                 <div className="container-fluid d-flex dash-list">
                     <div className="row justify-content-center">
                     {/* dashboard items */}
-
-            
-                            
 
                                 {props.userPlans.tripPlans?.map((plan) => {
                                     return(
@@ -57,9 +67,24 @@ const Dashboard = (props) => {
 
                         
 
-
                     </div>
+                    
                 </div>
+                <div className="m-auto text-center">
+                    <button className="btn btn-danger m-5" onClick={handleDeleteClick}>Delete Account</button>
+                </div>
+                
+                    <div className={showModel}>
+                        <div className="text-center bg-white border p-5 w-75 m-auto">
+                            <h3>Are you sure you want to delete your account?</h3>
+                            <div className="d-inline-block m-3">
+                                <button className="btn btn-danger" onClick={yesClick}>Yes, please delete</button>
+                            </div>
+                            <div className="d-inline-block m-3">
+                                <button className="btn btn-warning" onClick={noClick}>No, I want to keep this account</button>
+                            </div>
+                        </div>
+                    </div>
 
             </div>
         </>

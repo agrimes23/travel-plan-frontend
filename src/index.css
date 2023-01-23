@@ -133,6 +133,13 @@ nav {
   display: flex;
 }
 
+.arrange-Model {
+  position: absolute;
+  z-index: 3;
+  top: 30vh;
+  left: 32vw;
+}
+
 .hide-tab {
   display: none;
 }
