@@ -1,4 +1,4 @@
-import useState from 'react'
+import {useState} from 'react'
 import { Route, Routes, Link } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import { useEffect } from 'react';
@@ -11,24 +11,30 @@ import LoginPage from './components/LoginPage';
 
 function App() {
 
-  // const [userPlans, setUserPlans] = useState([])
+  const [userPlans, setUserPlans] = useState([])
+  const [tripPlans, setTripPlans] = useState({})
 
+  // get user info + all saved plans
+  const getUserPlans = (data) => {
+    axios.get('http://localhost:8080/api/v1/userplans/' + data.id)
+    .then((res) => setUserPlans(res.data),
+    (err) => console.log(err),
+    
+    )
+  }
 
-  // // get user info + all saved plans
-  // const getUserPlans = (userId) => {
-  //   axios.get('http://localhost:8080/' + userId)
-  //   .then((res) => setUserPlans(res.data),
-  //   (err) => console.log(err)
-  //   )
-  // }
+  // create new user in db
+  const handleCreate = (addUser) => {
+    axios.post('http://localhost:8080/api/v1/userplans', addUser)
+    .then((res) => {
+      getUserPlans(res.data)
+    })
+  }
 
-  // // create new user in db
-  // const handleCreate = (addUser) => {
-  //   axios.post('http://localhost:8080/', addUser)
-  //   .then((res) => {
-  //     getUserPlans()
-  //   })
-  // }
+  const handleLogin = (data) => {
+    axios.post('http://localhost:8080/api/v1/userplans/login', data)
+    .then(response => setUserPlans(response.data))
+  }
 
   //   // might need to redo
   //   const handleDelete = (event) => {
@@ -50,6 +56,8 @@ function App() {
 
   useEffect(() => {
 
+
+
   }, [])
 
   return (
@@ -57,10 +65,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage/>}/>
-        <Route path="/dashboard" element={<Dashboard />}/>
-        <Route path="/tripdetails" element={<TripShowPage />} />
-        <Route path="/signup" element={<SignupPage/>} />
-        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/dashboard" element={<Dashboard setTripPlans={setTripPlans} userPlans={userPlans}/>}/>
+        <Route path="/tripdetails" element={<TripShowPage tripPlans={tripPlans} userPlans={userPlans} />} />
+        <Route path="/signup" element={<SignupPage handleCreate={handleCreate}/>} />
+        <Route path="/login" element={<LoginPage handleLogin={handleLogin} />} />
       </Routes>
     </>
   )

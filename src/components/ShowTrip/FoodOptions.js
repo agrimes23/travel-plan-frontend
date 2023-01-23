@@ -28,10 +28,10 @@ const FoodOptions = () => {
         <>
         <form className="d-flex justify-content-center row">
                 <select className="m-3" size="5">
-                    {foodOptions.map((food) => {
+                    {foodOptions.map((food, key) => {
                         return (
                             <>
-                                <option className="d-block">{food.date}: {food.name}, ${(food.price).toFixed(2)}</option>
+                                <option key={key} className="d-block">{food.date}: {food.name}, ${(food.price).toFixed(2)}</option>
                             </>
                         )
                     })}

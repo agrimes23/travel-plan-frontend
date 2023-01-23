@@ -36,10 +36,10 @@ const HotelOptions = (props) => {
         <>
             <form className="d-flex justify-content-center row">
                 <select className="m-3" size="5">
-                {hotelOptions.map((hotel) => {
+                {hotelOptions.map((hotel, key) => {
                             return (
                                 <>
-                                    <option className="d-block">{hotel.stayDate}: {hotel.hotelName}, ${(hotel.price).toFixed(2)}</option>
+                                    <option key={key} className="d-block">{hotel.stayDate}: {hotel.hotelName}, ${(hotel.price).toFixed(2)}</option>
                                 </>
                             )
                         })}

@@ -32,10 +32,10 @@ const ActivityOptions = () => {
         <>
         <form className="d-flex justify-content-center row">
                 <select className="m-3" size="5">
-                    {actOptions.map((activity) => {
+                    {actOptions.map((activity, key) => {
                         return (
                             <>
-                                <option className="d-block">{activity.startDate}: {activity.name}, ${(activity.price).toFixed(2)}</option>
+                                <option key={key} className="d-block">{activity.startDate}: {activity.name}, ${(activity.price).toFixed(2)}</option>
                             </>
                         )
                     })}
