@@ -36,16 +36,16 @@ const HotelOptions = (props) => {
         <>
             <form className="d-flex justify-content-center row">
                 <select className="m-3" size="5">
-                {hotelOptions.map((hotel) => {
+                {hotelOptions.map((hotel, key) => {
                             return (
                                 <>
-                                    <option className="d-block">{hotel.stayDate}: {hotel.hotelName}, ${(hotel.price).toFixed(2)}</option>
+                                    <option key={key} className="d-block">{hotel.stayDate}: {hotel.hotelName}, ${(hotel.price).toFixed(2)}</option>
                                 </>
                             )
                         })}
                 </select>
                 <div className="text-center">
-                    <input className="btn btn-info m-3" onClick={() => addToItinerary()} type="submit" value="add to itinerary"/>
+                    <input className="btn btn-info m-3" type="submit" value="add to itinerary"/>
                 </div>
             </form>
         </>
