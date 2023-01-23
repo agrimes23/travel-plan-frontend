@@ -4,13 +4,20 @@ import HotelOptions from './HotelOptions'
 import TransportOptions from './TransportOptions'
 import ActivityOptions from './ActivityOptions'
 import FoodOptions from './FoodOptions'
+import AddTransportOptions from './AddTransportOptions'
+
 
 const TabContent = (props) => {
 
-    
-    
-
     const itineraryList = []
+
+    const handleSubmit= () => {
+
+    }
+
+    const handleChange= () => {
+        
+    }
 
     const addToItinerary = (hotel) => {
         if (props.active === "Hotel") {
@@ -67,60 +74,14 @@ const TabContent = (props) => {
                 </div>
                 <div className={ props.active === "Transport" ? "show-tab" : "hide-tab"}>
                     <div>
-                       <TransportOptions />
+                       <TransportOptions tripPlans={props.tripPlans} />
                         
-                        <div className="d-inline-block m-3">                                 
-                            <h3>Add Transportation to the List Options:</h3>
-                            <div>
-                                <form>
-                                    <div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='type of transport'>Type of Transport</label>
-                                            <select className="d-inline-block row m-2 w-75">
-                                                <option>Type of Transport</option>
-                                                <option>Airplane</option>
-                                                <option>Bus</option>
-                                                <option>Boat</option>
-                                                <option>Train</option>
-                                                <option>Subway</option>
-                                                <option>Taxi</option>
-                                                <option>Bike</option>
-                                                <option>Scooter</option>
-                                                <option>Walking</option>
-                                                <option>Other</option>
-                                            </select>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Site Link'>Site Link</label>
-                                            <input name="" placeholder='Site Link'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='departure date'>Departure Date</label>
-                                            <input name="" type='date' placeholder='departure date'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Arrival Date'>Arrival Date</label>
-                                            <input name="" type='date' placeholder='arrival date' />
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='price'>Price</label>
-                                            <input name="" placeholder='price'/>
-                                        </div>
 
-                                        {/* Only show boarding time input if airplane, bus, boat, train */}
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Boarding Time'>Boarding Time (hh:mm AM/PM)</label>
-                                            <input name="" type='time' placeholder='boarding time'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Arrival Time'>Arrival Time (hh:mm AM/PM)</label>
-                                            <input name="" type='time' placeholder='arrival time'/>
-                                        </div>
-                                    </div>
-                                    <button className="btn transport-btn my-3">Add Transport Options</button>
-                                </form>
-                            </div>
-                        </div>
+                       <AddTransportOptions />
+
+
+
+
                     </div>
                 </div>
                 <div className={ props.active === "Activities" ? "show-tab" : "hide-tab"}>

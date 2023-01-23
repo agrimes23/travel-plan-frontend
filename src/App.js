@@ -58,7 +58,7 @@ function App() {
 
 
 
-  }, [])
+  }, [getUserPlans])
 
   return (
     <>

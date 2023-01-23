@@ -12,7 +12,7 @@ const HotelOptions = (props) => {
         checkOut: "11:00"
     },
     {
-        hotelName: "America Inn",
+        hotelName: "Americ Inn",
         stayDate: "10/3/2023",
         price: 150.00,
         checkIn: "17:00",
