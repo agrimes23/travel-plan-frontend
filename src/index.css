@@ -5,11 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+select {
+  width: 400px !important;
 }
 
 .zoom {
@@ -29,6 +35,51 @@ nav {
 
 .logo {
   width: 7em;
+}
+
+/* ---------------------- Home Page ---------------------- */
+
+.carl-img {
+  object-fit: cover;
+  height: 50vh;
+  
+}
+
+.carl-div {
+  border: 5px rgb(3, 90, 78) solid;
+}
+
+.sign-up-btn {
+ font-size: 1.4em;
+ padding: 2%;
+}
+
+.sign-up-title {
+  font-size: 2em;
+}
+
+.log-in-title {
+  font-size: 1.6em;
+}
+
+.login-btn {
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+/* ---------------------- Signup ---------------------- */
+
+.signup-container {
+  background-color: rgb(114, 151, 139);
+  width: 700px;
+  height: 400px;
+  border-radius: 5%;
+  z-index: 2;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  margin-top: -50px;
+  margin-left: -50px;
 }
 
 /* ---------------------- Dashboard ---------------------- */
@@ -55,3 +106,33 @@ nav {
   object-fit: cover;
 }
 
+/* --------------------- Trip Show Page --------------------- */
+.hotel-btn {
+  background-color: purple;
+  color: white;
+}
+
+.transport-btn {
+  background-color: rgb(0, 56, 53);
+  color: white;
+}
+
+.activity-btn {
+  background-color: rgb(180, 3, 3);
+  color: white;
+}
+
+.trip-show-img {
+  object-fit: cover;
+  height: 200px;
+}
+
+/* ------------------------- Tabs ------------------------- */
+
+.show-tab {
+  display: flex;
+}
+
+.hide-tab {
+  display: none;
+}
