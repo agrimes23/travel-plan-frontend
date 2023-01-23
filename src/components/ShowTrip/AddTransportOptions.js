@@ -4,7 +4,7 @@ import useNavigate from 'react-router-dom'
 
 const AddTransportOptions = () => {
 
-    const [addTransport, setAddTransport] = useState({})
+    // const [addTransport, setAddTransport] = useState({type: })
 
     const handleSubmit = () => {
 
@@ -21,6 +21,11 @@ const AddTransportOptions = () => {
                         <div>
                             <form onSubmit={handleSubmit}>
                                 <div>
+                                    <div className="d-inline-block row m-2">
+                                        <label htmlFor='company name'>Transport Company</label>
+                                        
+                                        <input name="transportCompany" onChange={handleChange} placeholder="transport company" />
+                                    </div>
                                     <div className="d-inline-block row m-2">
                                         <label htmlFor='type of transport'>Type of Transport</label>
                                         

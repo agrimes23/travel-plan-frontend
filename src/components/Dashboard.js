@@ -8,7 +8,7 @@ const Dashboard = (props) => {
     const navigate = useNavigate()
 
     const handleClick = (plan) => {
-        props.setTripPlans(plan)
+        props.setTripPlan(plan)
         navigate("/tripdetails/")
     }
 
@@ -28,6 +28,8 @@ const Dashboard = (props) => {
     useEffect(() => {
 
     }, [])
+
+
 
     return (
         <>
@@ -49,12 +51,12 @@ const Dashboard = (props) => {
                                             <img className="trip-image-dash" src="https://images.freeimages.com/clg/istock/previews/9969/99696851-location-flat-icon-travel-map-and-pin-vector-illustration.jpg" />
                                             <div className="d-flex p-3 flex-row justify-content-around py-4">
                                             <div className="text-left">
-                                                <h3>{plan.TripDetails.placeName}</h3>
+                                                <h3>{plan.placeName}</h3>
                                             </div>
                                             
                                             <div className="text-left">
-                                                <h4>{plan.TripDetails.tripStart} - {plan.TripDetails.tripEnd}</h4>
-                                                <h4>{plan.TripDetails.EstBud}</h4>
+                                                <h4>{plan.tripStart} - {plan.tripEnd}</h4>
+                                                <h4>${plan.estBud}</h4>
                                             </div>
                                         </div>
                                     </div>

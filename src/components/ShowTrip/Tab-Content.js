@@ -27,7 +27,7 @@ const TabContent = (props) => {
         }
     }
 
-
+    console.log("props.tripPlan " + props.tripPlan.transport)
     return (
         <>
             <div className={ props.active === "Hotel" ? "show-tab" : "hide-tab"}>
@@ -74,7 +74,7 @@ const TabContent = (props) => {
                 </div>
                 <div className={ props.active === "Transport" ? "show-tab" : "hide-tab"}>
                     <div>
-                       <TransportOptions tripPlans={props.tripPlans} />
+                       <TransportOptions tripPlan={props.tripPlan} />
                         
 
                        <AddTransportOptions />

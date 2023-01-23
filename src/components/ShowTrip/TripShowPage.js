@@ -4,7 +4,7 @@ import IndexTabs from './IndexTabs'
 
 const TripShowPage = (props) => {
 
-    console.log()
+console.log(props.tripPlan.placeName)
     return (
         <>
             <div className="container-fluid">
@@ -12,9 +12,9 @@ const TripShowPage = (props) => {
                      
                     <div className="col d-flex justify-content-center text-center mt-5 p-2">
                         <div className='row'>
-                            <h1>{props.tripPlans.TripDetails.placeName}</h1>
-                            <h3>{props.tripPlans.TripDetails.tripStart} - {props.tripPlans.TripDetails.tripEnd}</h3>
-                            <h3>${props.tripPlans.TripDetails.EstBud.toLocaleString("en-US")}</h3>
+                            <h1>{props.tripPlan.placeName}</h1>
+                            <h3>{props.tripPlan.tripStart} - {props.tripPlan.tripEnd}</h3>
+                            <h3>${props.tripPlan.estBud.toLocaleString("en-US")}</h3>
                             <button className="btn my-2">(Edit Location & Dates)</button>
                         </div>
                     </div>
@@ -27,7 +27,7 @@ const TripShowPage = (props) => {
                             <h2 className="">Est. Total: $</h2>
                         </div>
                         <div className="w-100 d-flex justify-content-center">
-                        <IndexTabs tripPlans={props.tripPlans}/>
+                        <IndexTabs tripPlan={props.tripPlan}/>
                         </div>
                         <hr className="my-5"></hr>
                         

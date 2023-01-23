@@ -38,18 +38,19 @@ const TransportOptions = (props) => {
         
     }, [])
 
+    console.log("transport" + props.tripPlan)
     return (
         <>
             <form className="d-flex justify-content-center row">
-                <select className="m-3" size="5">
-                    {props.tripPlans.transport.map((transport, key) => {
+                {/* <select className="m-3" size="5">
+                    {props.tripPlan.transport.map((transport, key) => {
                         return (
                             <>
                                 <option key={key} className="d-block"> {transport.arrivalDate}: {transport.transportCompany} ({transport.type}) ${(transport.price).toFixed(2)}</option>
                             </>
                         )
                     })}
-                </select>
+                </select> */}
                 <div className="text-center">
                     <input className="btn btn-info m-3" type="submit" value="add to itinerary"/>
                 </div>
