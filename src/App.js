@@ -47,7 +47,7 @@ function App() {
   
     // updates notes or state in the database
     const handleUpdate = (updatePlan) => {
-      axios.put('http://localhost:8080/api/v1/userplans/' + updatePlan.id, updatePlan)
+      axios.put('http://localhost:8080/api/v1/userplans/update/' + userPlans.id, updatePlan)
       .then((response) => {
         getUserPlans()
       })
@@ -70,7 +70,7 @@ function App() {
         <Route path="/tripdetails" element={<TripShowPage tripPlan={tripPlan} userPlans={userPlans} />} />
         <Route path="/signup" element={<SignupPage handleCreate={handleCreate}/>} />
         <Route path="/login" element={<LoginPage handleLogin={handleLogin} />} />
-        <Route path="/newtrip" element={<NewTrip handleUpdate={handleUpdate}/>} />
+        <Route path="/newtrip" element={<NewTrip handleUpdate={handleUpdate} userPlans={userPlans} />} />
       </Routes>
     </>
   )
