@@ -8,8 +8,8 @@ const Dashboard = (props) => {
     const navigate = useNavigate()
 
     const handleClick = (plan) => {
-        props.setTripPlan(plan)
-        navigate("/tripdetails/")
+        // props.setTripPlan(plan)
+        navigate("/newtrip")
     }
 
     const handleDeleteClick = () => {
