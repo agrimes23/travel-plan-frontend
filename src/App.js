@@ -53,6 +53,12 @@ function App() {
       })
     }
 
+    const handleItineraryUpdate = (updatePlan) => {
+      axios.put('http://localhost:8080/api/v1/userplans/addTrip/' + userPlans.id, updatePlan)
+      .then((response) => {
+        getUserPlans()
+      })
+    }
 
 
   useEffect(() => {

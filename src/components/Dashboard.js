@@ -12,7 +12,7 @@ const Dashboard = (props) => {
     }
 
     const handleTripClick = (plan) => {
-        // props.setTripPlan(plan)
+        props.setTripPlan(plan)
         navigate("/tripdetails")
     }
 

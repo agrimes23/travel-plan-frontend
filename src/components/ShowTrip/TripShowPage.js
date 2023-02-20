@@ -14,7 +14,7 @@ console.log(props.tripPlan.placeName)
                         <div className='row'>
                             <h1>{props.tripPlan.placeName}</h1>
                             <h3>{props.tripPlan.tripStart} - {props.tripPlan.tripEnd}</h3>
-                            <h3>${props.tripPlan.estBud.toLocaleString("en-US")}</h3>
+                            <h3>~${props.tripPlan.estBud.toLocaleString()}</h3>
                             <button className="btn my-2">(Edit Location & Dates)</button>
                         </div>
                     </div>
