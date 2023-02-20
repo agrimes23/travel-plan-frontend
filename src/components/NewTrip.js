@@ -41,7 +41,7 @@ const NewTrip = (props) => {
                             <input placeholder='the day you get back' name="tripEnd" value={newTripDetails.tripEnd} onChange={handleChange} />
 
                             <label htmlFor='enter estimated budget'>Enter Estimated Budget </label>
-                            <input placeholder='budget for trip' name="estBud" value={newTripDetails.estBud} onChange={handleChange} />
+                            <input type="number" placeholder='budget for trip' name="estBud" value={newTripDetails.estBud} onChange={handleChange} />
 
                             <div className="d-flex justify-content-center align-items-center">
                                 <input className="btn btn-info mt-5 " type="submit"/>

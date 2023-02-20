@@ -47,7 +47,7 @@ function App() {
   
     // updates notes or state in the database
     const handleUpdate = (updatePlan) => {
-      axios.put('http://localhost:8080/api/v1/userplans/update/' + userPlans.id, updatePlan)
+      axios.put('http://localhost:8080/api/v1/userplans/addTrip/' + userPlans.id, updatePlan)
       .then((response) => {
         getUserPlans()
       })
