@@ -5,65 +5,66 @@ import TransportOptions from './TransportOptions'
 import ActivityOptions from './ActivityOptions'
 import FoodOptions from './FoodOptions'
 import AddTransportOptions from './AddTransportOptions'
+import AddActivityOptions from './AddActivityOptions'
 
 
 const TabContent = (props) => {
 
-    const itineraryList = []
+    const [newTripDetails, setNewTripDetails] = useState({...props.tripPlans})
+    // const navigate = useNavigate();
+    
 
-    const handleSubmit= () => {
-
+    const handleChange = (e) => {
+        setNewTripDetails({...newTripDetails, [e.target.name]: e.target.value})
+    }
+    const handleSubmit= (e) => {
+        e.preventDefault()
+        props.handleAddHotel(newTripDetails, props.tripId)
     }
 
-    const handleChange= () => {
-        
-    }
 
-    const addToItinerary = (hotel) => {
-        if (props.active === "Hotel") {
-            itineraryList.push(hotel)
-        } else if (props.active === "Transport") {
-            itineraryList.push()
-        }
-    }
 
-    console.log("props.tripPlan " + props.tripPlan.transport)
     return (
         <>
             <div className={ props.active === "Hotel" ? "show-tab" : "hide-tab"}>
                     <div>
-                        <HotelOptions active={props.active}/>
+                        <HotelOptions active={props.active} tripPlan={props.tripPlan}/>
                         <hr/>
                         <div className="d-inline-block m-3">
                             <h3>Add a Hotel to the List Options:</h3>
                             <div>
-                                <form>
+
+                                <form onSubmit={handleSubmit}>
                                     <div className='d-flex'>
                                         <div className="flex-fill row m-2">
+                                            <label htmlFor='hotel-name'>ID</label>
+                                            <input name="hotelId" placeholder="hotel id" value={newTripDetails.hotelId} onChange={handleChange} />
+                                        </div>
+                                        <div className="flex-fill row m-2">
                                             <label htmlFor='hotel-name'>Hotel Name</label>
-                                            <input name="" placeholder="hotel name"  />
+                                            <input name="hotelName" placeholder="hotel name" value={newTripDetails.hotelName} onChange={handleChange} />
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='check-in-date'>Check-in Date</label>
-                                            <input name="" type='date' placeholder="date of check-in" />
+                                            <input name="stayDate" type='date' placeholder="date of check-in" value={newTripDetails.stayDate} onChange={handleChange}  />
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='price'>Price for the Night</label>
-                                            <input name="" placeholder="price for the night" />
+                                            <input name="price" placeholder="price for the night" value={newTripDetails.price} onChange={handleChange}  />
                                         </div>
                                     </div>
                                     <div className='d-flex'>
                                     <div className="flex-fill row m-2">
                                             <label htmlFor='link'>Site Link</label>
-                                            <input name="" placeholder="Link" />
+                                            <input name="siteLink" placeholder="Link" value={newTripDetails.siteLink} onChange={handleChange}  />
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='checkin time'>Check-in time (hh:mm AM/PM)</label>
-                                            <input type='time' name="" placeholder="check-in time" />
+                                            <input type='time' name="checkIn" placeholder="check-in time" value={newTripDetails.checkIn} onChange={handleChange} />
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='checkout time'>Check-out time (hh:mm AM/PM)</label>
-                                            <input type='time' name="" placeholder="check-out time" />
+                                            <input type='time' name="checkOut" placeholder="check-out time" value={newTripDetails.checkOut} onChange={handleChange} />
                                         </div>
                                     </div>
                                     <button className="btn hotel-btn my-3">Add Hotel Options</button>
@@ -76,51 +77,14 @@ const TabContent = (props) => {
                     <div>
                        <TransportOptions tripPlan={props.tripPlan} />
                         
-
-                       <AddTransportOptions />
-
-
-
+                       <AddTransportOptions handleAddTransport={props.handleAddTransport}   />
 
                     </div>
                 </div>
                 <div className={ props.active === "Activities" ? "show-tab" : "hide-tab"}>
                     <div>
-                        <ActivityOptions/>
-                        <div className="d-inline-block m-3">
-                            <h3>Add an Activity to the List Options:</h3>
-                            <div>
-                                <form>
-                                    <div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Activty Name'>Activty Name</label>
-                                            <input name="" placeholder='activity name'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Start Date'>Start Date</label>
-                                            <input name="" type='date' placeholder='start date'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Site Link'>Site Link</label>
-                                            <input name="" placeholder='Site Link'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Price'>Price</label>
-                                            <input name="" placeholder='price'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Start Time'>Start Time (hh:mm AM/PM)</label>
-                                            <input name="" type='time' placeholder='start time'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='End Time'>End Time (hh:mm AM/PM)</label>
-                                            <input name="" type='time' placeholder='End Time'/>
-                                        </div>
-                                    </div>
-                                    <button className="btn activity-btn my-3">Add Activity Options</button>
-                                </form>
-                            </div>
-                        </div>
+                        <ActivityOptions tripPlan={props.tripPlan}/>
+                        <AddActivityOptions tripPlan={props.tripPlan} tripId={props.tripId} handleAddActivity={props.handleAddActivity} />
                         
                     </div>
                 </div>
