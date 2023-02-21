@@ -52,7 +52,7 @@ const IndexTabs = (props) => {
             {/* Tab Content */}
             <div className=" tab-content d-inline-block mx-2 mt-5 row">
                 <h5>Choose from current options to add to your Itinerary:</h5>
-                    <TabContent tripPlan={props.tripPlan} active={active} handleAddHotel={props.handleAddHotel} />
+                    <TabContent tripPlan={props.tripPlan} tripId={props.tripId} active={active} handleAddHotel={props.handleAddHotel} />
             </div>
         </div>
         </>
