@@ -8,15 +8,17 @@ import AddTransportOptions from './AddTransportOptions'
 
 
 const TabContent = (props) => {
-
     const itineraryList = []
+    // const newEntry = props.tripPlans.length
+    const [newTripDetails, setNewTripDetails] = useState({...props.tripPlans})
+    // const navigate = useNavigate();
+    
 
-    const handleSubmit= () => {
-
+    const handleChange = (e) => {
+        setNewTripDetails({...newTripDetails, [e.target.name]: e.target.value})
     }
-
-    const handleChange= () => {
-        
+    const handleSubmit= () => {
+        props.handleAddHotel(newTripDetails, props.tripPlans.id)
     }
 
     const addToItinerary = (hotel) => {
@@ -32,38 +34,39 @@ const TabContent = (props) => {
         <>
             <div className={ props.active === "Hotel" ? "show-tab" : "hide-tab"}>
                     <div>
-                        <HotelOptions active={props.active}/>
+                        <HotelOptions active={props.active} tripPlan={props.tripPlan}/>
                         <hr/>
                         <div className="d-inline-block m-3">
                             <h3>Add a Hotel to the List Options:</h3>
                             <div>
-                                <form>
+
+                                <form onSubmit={handleSubmit}>
                                     <div className='d-flex'>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='hotel-name'>Hotel Name</label>
-                                            <input name="" placeholder="hotel name"  />
+                                            <input name="" placeholder="hotel name" value={newTripDetails.hotelName} onChange={handleChange} />
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='check-in-date'>Check-in Date</label>
-                                            <input name="" type='date' placeholder="date of check-in" />
+                                            <input name="" type='date' placeholder="date of check-in" value={newTripDetails.stayDate} onChange={handleChange}  />
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='price'>Price for the Night</label>
-                                            <input name="" placeholder="price for the night" />
+                                            <input name="" placeholder="price for the night" value={newTripDetails.price} onChange={handleChange}  />
                                         </div>
                                     </div>
                                     <div className='d-flex'>
                                     <div className="flex-fill row m-2">
                                             <label htmlFor='link'>Site Link</label>
-                                            <input name="" placeholder="Link" />
+                                            <input name="" placeholder="Link" value={newTripDetails.siteLink} onChange={handleChange}  />
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='checkin time'>Check-in time (hh:mm AM/PM)</label>
-                                            <input type='time' name="" placeholder="check-in time" />
+                                            <input type='time' name="" placeholder="check-in time" value={newTripDetails.checkIn} onChange={handleChange} />
                                         </div>
                                         <div className="flex-fill row m-2">
                                             <label htmlFor='checkout time'>Check-out time (hh:mm AM/PM)</label>
-                                            <input type='time' name="" placeholder="check-out time" />
+                                            <input type='time' name="" placeholder="check-out time" value={newTripDetails.checkOut} onChange={handleChange} />
                                         </div>
                                     </div>
                                     <button className="btn hotel-btn my-3">Add Hotel Options</button>
