@@ -83,11 +83,7 @@ const TabContent = (props) => {
                     <div>
                        <TransportOptions tripPlan={props.tripPlan} />
                         
-
-                       <AddTransportOptions />
-
-
-
+                       <AddTransportOptions handleAddTransport={props.handleAddTransport}   />
 
                     </div>
                 </div>
@@ -100,28 +96,32 @@ const TabContent = (props) => {
                                 <form>
                                     <div>
                                         <div className="d-inline-block row m-2">
+                                            <label htmlFor='Activty Name'>ID</label>
+                                            <input name="actID" placeholder='activity id'/>
+                                        </div>
+                                        <div className="d-inline-block row m-2">
                                             <label htmlFor='Activty Name'>Activty Name</label>
-                                            <input name="" placeholder='activity name'/>
+                                            <input name="actName" placeholder='activity name'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='Start Date'>Start Date</label>
-                                            <input name="" type='date' placeholder='start date'/>
+                                            <input name="startDate" type='date' placeholder='start date'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='Site Link'>Site Link</label>
-                                            <input name="" placeholder='Site Link'/>
+                                            <input name="siteLink" placeholder='Site Link'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='Price'>Price</label>
-                                            <input name="" placeholder='price'/>
+                                            <input name="price" placeholder='price'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='Start Time'>Start Time (hh:mm AM/PM)</label>
-                                            <input name="" type='time' placeholder='start time'/>
+                                            <input name="startTime" type='time' placeholder='start time'/>
                                         </div>
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='End Time'>End Time (hh:mm AM/PM)</label>
-                                            <input name="" type='time' placeholder='End Time'/>
+                                            <input name="endTime" type='time' placeholder='End Time'/>
                                         </div>
                                     </div>
                                     <button className="btn activity-btn my-3">Add Activity Options</button>

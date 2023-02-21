@@ -60,6 +60,27 @@ function App() {
       })
     }
 
+    const handleAddActivity = (addHotel, tripId) => {
+      axios.put('http://localhost:8080/api/v1/userplans/addHotel/' + userPlans.id + "/" + tripId, addHotel)
+      .then((response) => {
+        getUserPlans()
+      })
+    }
+
+    const handleAddTransport = (addHotel, tripId) => {
+      axios.put('http://localhost:8080/api/v1/userplans/addHotel/' + userPlans.id + "/" + tripId, addHotel)
+      .then((response) => {
+        getUserPlans()
+      })
+    }
+
+    const handleAddFood = (addHotel, tripId) => {
+      axios.put('http://localhost:8080/api/v1/userplans/addHotel/' + userPlans.id + "/" + tripId, addHotel)
+      .then((response) => {
+        getUserPlans()
+      })
+    }
+
 
   useEffect(() => {
 
@@ -73,7 +94,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/dashboard" element={<Dashboard handleDelete={handleDelete} setTripPlan={setTripPlan} userPlans={userPlans}/>}/>
-        <Route path="/tripdetails" element={<TripShowPage tripPlan={tripPlan} userPlans={userPlans} handleAddHotel={handleAddHotel} />} />
+        <Route path="/tripdetails" element={<TripShowPage tripPlan={tripPlan} userPlans={userPlans} handleAddHotel={handleAddHotel} handleAddActivity={handleAddActivity} handleAddFood={handleAddFood} handleAddTransport={handleAddTransport} />} />
         <Route path="/signup" element={<SignupPage handleCreate={handleCreate}/>} />
         <Route path="/login" element={<LoginPage handleLogin={handleLogin} />} />
         <Route path="/newtrip" element={<NewTrip handleUpdate={handleUpdate} userPlans={userPlans} />} />
