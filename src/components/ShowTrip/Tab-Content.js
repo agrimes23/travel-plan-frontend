@@ -5,10 +5,11 @@ import TransportOptions from './TransportOptions'
 import ActivityOptions from './ActivityOptions'
 import FoodOptions from './FoodOptions'
 import AddTransportOptions from './AddTransportOptions'
+import AddActivityOptions from './AddActivityOptions'
 
 
 const TabContent = (props) => {
-    const itineraryList = []
+
     const [newTripDetails, setNewTripDetails] = useState({...props.tripPlans})
     // const navigate = useNavigate();
     
@@ -20,15 +21,8 @@ const TabContent = (props) => {
         e.preventDefault()
         props.handleAddHotel(newTripDetails, props.tripId)
     }
-    console.log("trip ID " + props.tripPlans)
 
-    const addToItinerary = (hotel) => {
-        if (props.active === "Hotel") {
-            itineraryList.push(hotel)
-        } else if (props.active === "Transport") {
-            itineraryList.push()
-        }
-    }
+
 
     return (
         <>
@@ -89,45 +83,8 @@ const TabContent = (props) => {
                 </div>
                 <div className={ props.active === "Activities" ? "show-tab" : "hide-tab"}>
                     <div>
-                        <ActivityOptions/>
-                        <div className="d-inline-block m-3">
-                            <h3>Add an Activity to the List Options:</h3>
-                            <div>
-                                <form>
-                                    <div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Activty Name'>ID</label>
-                                            <input name="actID" placeholder='activity id'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Activty Name'>Activty Name</label>
-                                            <input name="actName" placeholder='activity name'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Start Date'>Start Date</label>
-                                            <input name="startDate" type='date' placeholder='start date'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Site Link'>Site Link</label>
-                                            <input name="siteLink" placeholder='Site Link'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Price'>Price</label>
-                                            <input name="price" placeholder='price'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Start Time'>Start Time (hh:mm AM/PM)</label>
-                                            <input name="startTime" type='time' placeholder='start time'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='End Time'>End Time (hh:mm AM/PM)</label>
-                                            <input name="endTime" type='time' placeholder='End Time'/>
-                                        </div>
-                                    </div>
-                                    <button className="btn activity-btn my-3">Add Activity Options</button>
-                                </form>
-                            </div>
-                        </div>
+                        <ActivityOptions tripPlan={props.tripPlan}/>
+                        <AddActivityOptions tripPlan={props.tripPlan} tripId={props.tripId} handleAddActivity={props.handleAddActivity} />
                         
                     </div>
                 </div>

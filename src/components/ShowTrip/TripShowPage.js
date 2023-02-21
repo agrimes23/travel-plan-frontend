@@ -27,7 +27,7 @@ console.log(props.tripPlan.id)
                             <h2 className="">Est. Total: $</h2>
                         </div>
                         <div className="w-100 d-flex justify-content-center">
-                        <IndexTabs tripPlan={props.tripPlan} tripId={props.tripPlan.id} handleAddHotel={props.handleAddHotel} handleAddActivity={props.handleAddActivity}/>
+                        <IndexTabs tripPlan={props.tripPlan} tripId={props.tripPlan.id} handleAddHotel={props.handleAddHotel} handleAddActivity={props.handleAddActivity} handleAddFood={props.handleAddFood} handleAddTransport={props.handleAddTransport} />
                         </div>
                         <hr className="my-5"></hr>
                         

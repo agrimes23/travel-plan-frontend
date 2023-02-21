@@ -60,22 +60,22 @@ function App() {
       })
     }
 
-    const handleAddActivity = (addHotel, tripId) => {
-      axios.put('http://localhost:8080/api/v1/userplans/addHotel/' + userPlans.id + "/" + tripId, addHotel)
+    const handleAddActivity = (addActivity, tripId) => {
+      axios.put('http://localhost:8080/api/v1/userplans/addActivity/' + userPlans.id + "/" + tripId, addActivity)
       .then((response) => {
         getUserPlans()
       })
     }
 
-    const handleAddTransport = (addHotel, tripId) => {
-      axios.put('http://localhost:8080/api/v1/userplans/addHotel/' + userPlans.id + "/" + tripId, addHotel)
+    const handleAddTransport = (addTransport, tripId) => {
+      axios.put('http://localhost:8080/api/v1/userplans/addTransport/' + userPlans.id + "/" + tripId, addTransport)
       .then((response) => {
         getUserPlans()
       })
     }
 
-    const handleAddFood = (addHotel, tripId) => {
-      axios.put('http://localhost:8080/api/v1/userplans/addHotel/' + userPlans.id + "/" + tripId, addHotel)
+    const handleAddFood = (addFood, tripId) => {
+      axios.put('http://localhost:8080/api/v1/userplans/addFood/' + userPlans.id + "/" + tripId, addFood)
       .then((response) => {
         getUserPlans()
       })
