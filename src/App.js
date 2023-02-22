@@ -68,6 +68,7 @@ function App() {
     }
 
     const handleAddTransport = (addTransport, tripId) => {
+      console.log("app.js add transport: " + tripId)
       axios.put('http://localhost:8080/api/v1/userplans/addTransport/' + userPlans.id + "/" + tripId, addTransport)
       .then((response) => {
         getUserPlans()

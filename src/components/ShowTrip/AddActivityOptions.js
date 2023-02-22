@@ -4,7 +4,7 @@ import useNavigate from 'react-router-dom'
  
  const AddActivityOptions = (props) => {
      
-    const [newTripDetails, setNewTripDetails] = useState({...props.tripPlans})
+    const [newTripDetails, setNewTripDetails] = useState({...props.tripPlan})
     // const navigate = useNavigate();
     
 
