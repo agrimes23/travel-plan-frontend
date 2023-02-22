@@ -18,8 +18,6 @@ const NewTrip = (props) => {
         navigate('/dashboard')
     }
 
-    // console.log("helloooo " + props.userPlans.tripPlans[0].estBud)
-
     return (
         <>
             <div className="container-fluid">

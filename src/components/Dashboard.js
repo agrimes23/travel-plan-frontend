@@ -29,12 +29,6 @@ const Dashboard = (props) => {
         setShowModel("hide-tab")
     }
 
-    useEffect(() => {
-
-    }, [])
-
-
-
     return (
         <>
             {/* Dashboard Page */}

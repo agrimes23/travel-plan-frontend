@@ -5,15 +5,12 @@ import useNavigate from 'react-router-dom'
 const AddTransportOptions = (props) => {
 
     const [newTripDetails, setNewTripDetails] = useState({...props.tripPlans})
-    // const navigate = useNavigate();
     
-
     const handleChange = (e) => {
         setNewTripDetails({...newTripDetails, [e.target.name]: e.target.value})
     }
     const handleSubmit= (e) => {
         e.preventDefault()
-        console.log("add transport options: " + props.tripId)
         props.handleAddTransport(newTripDetails, props.tripId)
     }
 
