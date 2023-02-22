@@ -33,7 +33,7 @@ console.log(props.tripPlan.id)
                         
                         {/* Day 1 */}
                         <div>
-                            <h2>Day 1: Oct 3</h2>
+                            <h2>[***Itinerary will be updated soon***]</h2>
                             <div className="justify-content-between d-flex m-3">
                                 {/* Will go to a different page (or details...?) to let the user edit each hotel. They can edit the name, price, link, and notes(?) 
                                 Then once they update the individual links, it will be added to the dropdown showing the NAME (REGION) and PRICE only. When they select it however,

@@ -35,7 +35,7 @@ const ActivityOptions = (props) => {
                     { props.tripPlan.activities ? props.tripPlan.activities.map((activity, key) => {
                         return (
                             <>
-                                <option key={key} className="d-block">{activity.startDate}: {activity.name}, ${(activity.price).toFixed(2)}</option>
+                                <option key={key} className="d-block">{activity.startDate}: {activity.actName}, ${(activity.price).toFixed(2)}</option>
                             </>
                         )
                     }) : null }
