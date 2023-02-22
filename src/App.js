@@ -47,21 +47,21 @@ function App() {
   
     // updates notes or state in the database
     const handleUpdate = (updatePlan) => {
-      axios.put('http://localhost:8080/api/v1/userplans/addTrip/' + userPlans.id, updatePlan)
+      axios.put('https://travel-planning-backend.herokuapp.com/api/v1/userplans/addTrip/' + userPlans.id, updatePlan)
       .then((response) => {
         getUserPlans()
       })
     }
 
     const handleAddHotel = (addHotel, tripId) => {
-      axios.put('http://localhost:8080/api/v1/userplans/addHotel/' + userPlans.id + "/" + tripId, addHotel)
+      axios.put('https://travel-planning-backend.herokuapp.com/api/v1/userplans/addHotel/' + userPlans.id + "/" + tripId, addHotel)
       .then((response) => {
         getUserPlans()
       })
     }
 
     const handleAddActivity = (addActivity, tripId) => {
-      axios.put('http://localhost:8080/api/v1/userplans/addActivity/' + userPlans.id + "/" + tripId, addActivity)
+      axios.put('https://travel-planning-backend.herokuapp.com/api/v1/userplans/addActivity/' + userPlans.id + "/" + tripId, addActivity)
       .then((response) => {
         getUserPlans()
       })
@@ -69,14 +69,14 @@ function App() {
 
     const handleAddTransport = (addTransport, tripId) => {
       console.log("app.js add transport: " + tripId)
-      axios.put('http://localhost:8080/api/v1/userplans/addTransport/' + userPlans.id + "/" + tripId, addTransport)
+      axios.put('https://travel-planning-backend.herokuapp.com/api/v1/userplans/addTransport/' + userPlans.id + "/" + tripId, addTransport)
       .then((response) => {
         getUserPlans()
       })
     }
 
     const handleAddFood = (addFood, tripId) => {
-      axios.put('http://localhost:8080/api/v1/userplans/addFood/' + userPlans.id + "/" + tripId, addFood)
+      axios.put('https://travel-planning-backend.herokuapp.com/api/v1/userplans/addFood/' + userPlans.id + "/" + tripId, addFood)
       .then((response) => {
         getUserPlans()
       })
