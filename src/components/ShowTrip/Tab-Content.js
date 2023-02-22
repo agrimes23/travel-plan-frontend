@@ -6,6 +6,7 @@ import ActivityOptions from './ActivityOptions'
 import FoodOptions from './FoodOptions'
 import AddTransportOptions from './AddTransportOptions'
 import AddActivityOptions from './AddActivityOptions'
+import AddFoodOptions from './AddFoodOptions'
 
 
 const TabContent = (props) => {
@@ -22,7 +23,7 @@ const TabContent = (props) => {
         props.handleAddHotel(newTripDetails, props.tripId)
     }
 
-
+    console.log("tab content " + props.tripId)
 
     return (
         <>
@@ -76,8 +77,8 @@ const TabContent = (props) => {
                 <div className={ props.active === "Transport" ? "show-tab" : "hide-tab"}>
                     <div>
                        <TransportOptions tripPlan={props.tripPlan} />
-                        
-                       <AddTransportOptions handleAddTransport={props.handleAddTransport}   />
+
+                       <AddTransportOptions tripId={props.tripId} handleAddTransport={props.handleAddTransport} tripPlan={props.tripPlan}  />
 
                     </div>
                 </div>
@@ -90,39 +91,9 @@ const TabContent = (props) => {
                 </div>
                 <div className={ props.active === "Food" ? "show-tab" : "hide-tab"}>
                     <div>
-                        <FoodOptions />
-
-                        <div className="d-inline-block m-3">
-                            <h3>Add Food to the List Options:</h3>
-                            <div>
-                                <form>
-                                    <div className="">
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Food Place Name'>Food Place Name</label>
-                                            <input name="" placeholder='food place name'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Date'>Date</label>
-                                            <input name="" type='date' placeholder='date' />
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Estimated Price'>Est. Price</label>
-                                            <input name="" placeholder='estimated price'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Reservation Time'>Reservation Time (hh:mm AM/PM)</label>
-                                            <input name="" type='time' placeholder='reservation time'/>
-                                        </div>
-                                        <div className="d-inline-block row m-2">
-                                            <label htmlFor='Site Link'>Site Link</label>
-                                            <input name="" placeholder='Site Link'/>
-                                        </div>
-                                    </div>
-                                    <button className="btn activity-btn my-3">Add Food Options</button>
-                                </form>
-                            </div>
-                            
-                        </div>
+                        <FoodOptions tripPlan={props.tripPlan} />
+                        <AddFoodOptions tripPlan={props.tripPlan} tripId={props.tripId} handleAddFood={props.handleAddFood} />
+                        
                     </div>
                 </div>
         </>
