@@ -28,10 +28,10 @@ const FoodOptions = (props) => {
         <>
         <form className="d-flex justify-content-center row">
                 <select className="m-3" size="5">
-                    { props.tripPlan.food ? props.tripPlan.food.map((food, key) => {
+                    { props.tripPlan.food ? props.tripPlan.food.map((food) => {
                         return (
                             <>
-                                <option key={key} className="d-block">{food.date}: {food.foodName}, ${(food.price).toFixed(2)}</option>
+                                <option key={food.foodID} className="d-block">{food.date}: {food.foodName}, ${(food.price).toFixed(2)}</option>
                             </>
                         )
                     }) : null}

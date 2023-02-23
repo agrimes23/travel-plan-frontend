@@ -36,7 +36,7 @@ const TripShowPage = (props) => {
                         <div>
                             <h2>[***Itinerary will be updated soon***]</h2>
                             <div className="justify-content-between d-flex m-3">
-                                <ItineraryList />
+                                <ItineraryList tripPlan={props.tripPlan} />
                                 
                             </div>
                         </div>

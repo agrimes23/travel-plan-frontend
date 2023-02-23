@@ -8,10 +8,10 @@ const TransportOptions = (props) => {
         <>
             <form className="d-flex justify-content-center row">
                 <select className="m-3" size="5">
-                    { props.tripPlan.transports ? props.tripPlan.transports.map((transport, key) => {
+                    { props.tripPlan.transports ? props.tripPlan.transports.map((transport) => {
                         return (
                             <>
-                                <option key={key} className="d-block"> {transport.arrivalDate}: {transport.transportCompany} ({transport.type}) ${(transport.price).toFixed(2)}</option>
+                                <option key={transport.transportID} className="d-block"> {transport.arrivalDate}: {transport.transportCompany} ({transport.type}) ${(transport.price).toFixed(2)}</option>
                             </>
                         )
                     }) : null }

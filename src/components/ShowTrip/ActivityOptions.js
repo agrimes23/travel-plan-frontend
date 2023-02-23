@@ -8,10 +8,10 @@ const ActivityOptions = (props) => {
         <>
         <form className="d-flex justify-content-center row">
                 <select className="m-3" size="5">
-                    { props.tripPlan.activities ? props.tripPlan.activities.map((activity, key) => {
+                    { props.tripPlan.activities ? props.tripPlan.activities.map((activity) => {
                         return (
                             <>
-                                <option key={key} className="d-block">{activity.startDate}: {activity.actName}, ${(activity.price).toFixed(2)}</option>
+                                <option key={activity.actID} className="d-block">{activity.startDate}: {activity.actName}, ${(activity.price).toFixed(2)}</option>
                             </>
                         )
                     }) : null }
