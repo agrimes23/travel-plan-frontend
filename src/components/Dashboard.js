@@ -38,7 +38,7 @@ const Dashboard = (props) => {
                     <button className="btn zoom btn-warning my-5" onClick={handleNewClick}> + Plan a New Trip</button>
                 </div>
 
-                {/* dashboard list */}
+
                 <div className="container-fluid d-flex dash-list">
                     <div className="row justify-content-center">
                     {/* dashboard items */}

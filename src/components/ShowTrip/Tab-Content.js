@@ -23,8 +23,6 @@ const TabContent = (props) => {
         props.handleAddHotel(newTripDetails, props.tripId)
     }
 
-    console.log("tab content " + props.tripId)
-
     return (
         <>
             <div className={ props.active === "Hotel" ? "show-tab" : "hide-tab"}>

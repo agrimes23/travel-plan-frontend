@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from 'react'
 import useNavigate from 'react-router-dom'
 import IndexTabs from './IndexTabs'
+import ItineraryList from './ItineraryList'
 
 const TripShowPage = (props) => {
 
-console.log(props.tripPlan.id)
+
     return (
         <>
             <div className="container-fluid">
@@ -35,9 +36,7 @@ console.log(props.tripPlan.id)
                         <div>
                             <h2>[***Itinerary will be updated soon***]</h2>
                             <div className="justify-content-between d-flex m-3">
-                                {/* Will go to a different page (or details...?) to let the user edit each hotel. They can edit the name, price, link, and notes(?) 
-                                Then once they update the individual links, it will be added to the dropdown showing the NAME (REGION) and PRICE only. When they select it however,
-                                it will populate in the hotel section */}
+                                <ItineraryList />
                                 
                             </div>
                         </div>
