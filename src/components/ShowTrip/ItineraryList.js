@@ -17,6 +17,7 @@ const ItineraryList = (props) => {
     // Mock Database Schema within tripPlans:
     const itineraries = [
         {
+            itineraryID: 2343-2334-2342-1485,
             hotels: [
                 {
                     hotelID: "01",
@@ -37,19 +38,17 @@ const ItineraryList = (props) => {
     ]
     //////////////////////////////////////////////////////////////////////////////
 
-    const getAxios = useCallback( async (user) => {
-        await axios.get('http://localhost:8080/api/v1/userplans/' + user.id)
-        .then((res) => {
+    // const getAxios = useCallback( async (user) => {
+    //     await axios.get('http://localhost:8080/api/v1/userplans/' + props.user.id + "/" + props.tripPlan.id)
+    //     .then((res) => {
 
-            // setTemp(res.data.main.temp)
-            // setIcon(res.data.weather[0].icon)
+    //         // setTemp(res.data.main.temp)
+    //         // setIcon(res.data.weather[0].icon)
 
-        },
+    //     },
         
-        (err) => console.log(err))
-    })
-
-
+    //     (err) => console.log(err))
+    // })
 
     return (
         <>

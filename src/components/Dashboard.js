@@ -30,6 +30,8 @@ const Dashboard = (props) => {
         setShowModel("hide-tab")
     }
 
+    console.log("tripPlan: " + props.userPlans.tripPlan)
+
     return (
         <>
             {/* Dashboard Page */}
@@ -44,7 +46,7 @@ const Dashboard = (props) => {
                     <div className="row justify-content-center">
                     {/* dashboard items */}
 
-                                {props.userPlans.tripPlans?.map((plan) => {
+                                {props.userPlans.tripPlans ? props.userPlans.tripPlans.map((plan) => {
                                     return(
                                         <div key={plan.id} onClick={() => {handleTripClick(plan)} } className='m-3 zoom card dash-card border d-flex shadow-sm rounded'>
                                             <img className="trip-image-dash" src="https://images.freeimages.com/clg/istock/previews/9969/99696851-location-flat-icon-travel-map-and-pin-vector-illustration.jpg" />
@@ -61,9 +63,7 @@ const Dashboard = (props) => {
                                     </div>
 
                                     )
-                                })
-
-                                }
+                                }) : null }
                                 
 
                         

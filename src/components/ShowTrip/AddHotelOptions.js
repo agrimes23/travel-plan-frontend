@@ -27,10 +27,6 @@ const AddHotelOptions = (props) => {
                                 <form onSubmit={handleSubmit}>
                                     <div className='d-flex'>
                                         <div className="flex-fill row m-2">
-                                            <label htmlFor='hotel-name'>ID</label>
-                                            <input name="hotelId" placeholder="hotel id" value={newTripDetails.hotelId} onChange={handleChange} />
-                                        </div>
-                                        <div className="flex-fill row m-2">
                                             <label htmlFor='hotel-name'>Hotel Name</label>
                                             <input name="hotelName" placeholder="hotel name" value={newTripDetails.hotelName} onChange={handleChange} />
                                         </div>

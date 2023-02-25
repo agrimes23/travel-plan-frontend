@@ -26,10 +26,6 @@ import useNavigate from 'react-router-dom'
                     <form onSubmit={handleSubmit}>
                         <div>
                             <div className="d-inline-block row m-2">
-                                <label htmlFor='Activty Id'>ID</label>
-                                <input name="actID" placeholder='activity id' value={newTripDetails.actID} onChange={handleChange}/>
-                            </div>
-                            <div className="d-inline-block row m-2">
                                 <label htmlFor='Activty Name'>Activty Name</label>
                                 <input name="actName" placeholder='activity name' value={newTripDetails.actName} onChange={handleChange}/>
                             </div>

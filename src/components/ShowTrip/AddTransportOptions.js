@@ -22,10 +22,6 @@ const AddTransportOptions = (props) => {
                             <form onSubmit={handleSubmit}>
                                 <div>
                                     <div className="d-inline-block row m-2">
-                                        <label htmlFor='transport id'>Transport Company</label>
-                                        <input name="transportID" value={newTripDetails.transportID} onChange={handleChange} placeholder="transport id" />
-                                    </div>
-                                    <div className="d-inline-block row m-2">
                                         <label htmlFor='company name'>Transport Company</label>
                                         <input name="transportCompany" value={newTripDetails.transportCompany} onChange={handleChange} placeholder="transport company" />
                                     </div>
