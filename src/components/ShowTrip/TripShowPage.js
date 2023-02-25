@@ -5,6 +5,9 @@ import ItineraryList from './ItineraryList'
 
 const TripShowPage = (props) => {
 
+    const handleAddNewItinerary = () => {
+        props.handleNewItinerary(props.tripPlan.id, props.tripPlan.itineraries)
+    }
 
     return (
         <>
@@ -34,11 +37,26 @@ const TripShowPage = (props) => {
                         
                         {/* Day 1 */}
                         <div>
-                            <h2>[***Itinerary will be updated soon***]</h2>
+                            {/* { props.tripPlan.itineraries ? props.tripPlan.itineraries.map((itinerary) => {
+                                return (
+                                    <div>
+                                        <h2></h2>
+                                        <h3></h3>
+                                        <h3></h3>
+                                        <h3></h3>
+                                        <h3></h3>
+                                    </div>
+                                )
+                            }) : null } */}
+                            {/* <form onSubmit={handleAddNewItinerary}>
+                                <input type="submit">Make New Itinerary</input>
+                            </form> */}
+
+                            {/* <h2>[***Itinerary will be updated soon***]</h2>
                             <div className="justify-content-between d-flex m-3">
                                 <ItineraryList tripPlan={props.tripPlan} />
                                 
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
