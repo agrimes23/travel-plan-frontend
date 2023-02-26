@@ -14,28 +14,13 @@ const ItineraryList = (props) => {
     // // Hotels can only have one option per day, but we will check for this on the frontend side
     // // Activities, Transport, and Food should not have overlapping times
 
-    // Mock Database Schema within tripPlans:
-    const itineraries = [
-        {
-            itineraryID: 2343-2334-2342-1485,
-            hotels: [
-                {
-                    hotelID: "01",
-                    hotelName: "La Quinta"
-                },
-                {
-                    hotelID: "02",
-                    hotelName: "Marriott"
-                }
-            ],
-            transport: [
-                {
-                    transportID: "01",
-                    transportName: "Delta"
-                }
-            ]
-        }
-    ]
+    // How to Organize data into Itinerary format in the frontend:
+    // // save each item in itinerary based on arrival/start dates
+    // // Should I reorganize how I saved info to the backend in itineraries? Should I have split them up into cateogries? What was the benefit of splitting them up? 
+    // // // I think it makes it more difficult to organize it in the front end splitting up into hotels, transport, act, food. 
+    // // // But then, I can't make notes in the itinerary based on if it's an activity, hotel, transport, etc.
+    // // // Should I just make another key-value pair saying what type of category it is, like catType: "hotel". catType: "transport"...
+
     //////////////////////////////////////////////////////////////////////////////
 
     // const getAxios = useCallback( async (user) => {
@@ -49,6 +34,8 @@ const ItineraryList = (props) => {
         
     //     (err) => console.log(err))
     // })
+
+
 
     return (
         <>

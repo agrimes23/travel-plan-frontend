@@ -30,7 +30,6 @@ const Dashboard = (props) => {
         setShowModel("hide-tab")
     }
 
-    console.log("tripPlan: " + props.userPlans.tripPlan)
 
     return (
         <>

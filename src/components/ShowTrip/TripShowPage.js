@@ -37,26 +37,15 @@ const TripShowPage = (props) => {
                         
                         {/* Day 1 */}
                         <div>
-                            {/* { props.tripPlan.itineraries ? props.tripPlan.itineraries.map((itinerary) => {
-                                return (
-                                    <div>
-                                        <h2></h2>
-                                        <h3></h3>
-                                        <h3></h3>
-                                        <h3></h3>
-                                        <h3></h3>
-                                    </div>
-                                )
-                            }) : null } */}
                             {/* <form onSubmit={handleAddNewItinerary}>
                                 <input type="submit">Make New Itinerary</input>
                             </form> */}
 
-                            {/* <h2>[***Itinerary will be updated soon***]</h2>
+                            <h2>Trip Itinerary</h2>
                             <div className="justify-content-between d-flex m-3">
                                 <ItineraryList tripPlan={props.tripPlan} />
                                 
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
