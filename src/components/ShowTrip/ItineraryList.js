@@ -15,7 +15,7 @@ const ItineraryList = (props) => {
     // // Activities, Transport, and Food should not have overlapping times
 
     // How to Organize data into Itinerary format in the frontend:
-    // // save each item in itinerary based on arrival/start dates
+    // // save each item in itinerary on frontend into arrays/lists based on arrival/start dates
     // // Should I reorganize how I saved info to the backend in itineraries? Should I have split them up into cateogries? What was the benefit of splitting them up? 
     // // // I think it makes it more difficult to organize it in the front end splitting up into hotels, transport, act, food. 
     // // // But then, I can't make notes in the itinerary based on if it's an activity, hotel, transport, etc.
