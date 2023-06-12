@@ -97,7 +97,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar handleLogin={handleLogin} />
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/dashboard" element={<Dashboard handleDelete={handleDelete} setTripPlan={setTripPlan} userPlans={userPlans}/>}/>

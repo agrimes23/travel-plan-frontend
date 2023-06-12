@@ -38,15 +38,23 @@ const HomePage = () => {
                         </a>
                     </div>
                 </div>
-                <div className="d-flex row justify-content-center">
+                <div className="d-flex row justify-content-center bg-secondary text-muted">
+                    
                     <div className="m-5 text-center">
+
+                        {/* temporarily disabling buttons and links, users can view trip show page directly through the dashboard in the top right of the screen */}
+                        <h2 className="px-5 bg-warning">🛠️Currently WIP, improving and restructuring backend. Please see the dashboard to see frontend styling on the trip show page. 🛠️</h2>
+                        <h2 className="px-5 mb-5 bg-warning">Thank you for your patience!</h2>
+
                         <h3 className="sign-up-title mb-5">Start planning your trips!</h3>
-                        <button onClick={signUpRedirect} className="btn btn-info sign-up-btn">Sign up</button>
+                        {/* <button onClick={signUpRedirect} className="btn btn-secondary sign-up-btn" disable>Sign up</button> */}
+                        <h2 className="bg-secondary sign-up-btn" disable>Sign up (disabled)</h2>
                     </div>
                     <hr className="w-50" />
                     <div className="m-5 text-center">
                         <h5 className="log-in-title">Already got an account?</h5>
-                        <a href="/login" className="login-btn">Login to your Account</a>
+                        {/* <a href="/login" className="login-btn">Login to your Account</a> */}
+                        <h2 className="login-btn">Login to your Account (disabled)</h2>
                     </div>
                 </div>
             </div>

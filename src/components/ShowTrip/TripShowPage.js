@@ -28,6 +28,7 @@ const TripShowPage = (props) => {
                     
                     <div className="border p-5 rounded w-75">
                         <div className="">
+                            <h2 className="bg-warning text-center">🛠️CURRENTLY WIP: backend routes are being tested and currently do not function🛠️</h2>
                             <h2 className="">Est. Total: $</h2>
                         </div>
                         <div className="w-100 d-flex justify-content-center">
