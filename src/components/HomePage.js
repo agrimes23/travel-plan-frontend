@@ -15,7 +15,7 @@ const HomePage = () => {
             <div className="container-fluid">
                 <h1 className="text-center m-5">A New Way of Planning for Travel</h1>
 
-                <div className="container-fluid w-50">
+                <div className="container-fluid carousel-container">
                     <div id="carouselExampleControls" className="container-fluid carousel slide" data-bs-ride="carousel">
                         <div className="carl-div carousel-inner my-5">
                             <div className="carousel-item active">

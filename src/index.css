@@ -41,8 +41,12 @@ nav {
 
 .carl-img {
   object-fit: cover;
-  height: 50vh;
-  
+  height: 50vh; 
+}
+
+.carousel-container {
+  max-width: 1000px !important;
+  margin-bottom: 100px;
 }
 
 .carl-div {
@@ -145,6 +149,11 @@ nav {
 }
 
 @media (max-width: 500px) {
+  
+  .carl-img {
+    height: 300px;
+  }
+  
   .dash-card {
     max-width: 300px;
     height: 47vh !important;
