@@ -148,6 +148,7 @@ nav {
 @media (max-width: 500px) {
   .dash-card {
     max-width: 300px;
+    max-height: 47vh !important;
   }
 
   .dash-items {
