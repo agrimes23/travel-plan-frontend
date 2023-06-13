@@ -13,7 +13,6 @@ const Dashboard = (props) => {
 
     const handleTripClick = (plan) => {
         props.setTripPlan(plan)
-        console.log("indv. plan on dashboard: " + plan.id + " " + plan.placeName)
         navigate("/tripdetails")
     }
 
@@ -50,11 +49,11 @@ const Dashboard = (props) => {
                                         <div key={plan.id} onClick={() => {handleTripClick(plan)} } className='m-3 zoom card dash-card border d-flex shadow-sm rounded'>
                                             <img className="trip-image-dash" src="https://images.freeimages.com/clg/istock/previews/9969/99696851-location-flat-icon-travel-map-and-pin-vector-illustration.jpg" />
                                             <div className="d-flex p-3 flex-row justify-content-around py-4">
-                                            <div className="text-left">
+                                            <div className="dash-items text-left">
                                                 <h3>{plan.placeName}</h3>
                                             </div>
                                             
-                                            <div className="text-left">
+                                            <div className="dash-items text-left">
                                                 <h4>{plan.tripStart} - {plan.tripEnd}</h4>
                                                 <h4>${plan.estBud}</h4>
                                             </div>

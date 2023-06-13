@@ -98,11 +98,11 @@ nav {
 
 .dash-card {
   width: 400px !important;
-
+  height: 42vh !important;
 }
 
 .trip-image-dash {
-  height: 18vw;
+  height: 30vh;
   object-fit: cover;
 }
 
@@ -142,4 +142,17 @@ nav {
 
 .hide-tab {
   display: none;
+}
+
+
+@media (max-width: 500px) {
+  .dash-card {
+    max-width: 300px;
+  }
+
+  .dash-items {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
 }
