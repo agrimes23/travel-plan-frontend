@@ -114,6 +114,7 @@ nav {
 
 .trip-show-contain {
   max-width: 1000px;
+  width: 110vw;
 }
 
 .hotel-btn {
@@ -168,5 +169,28 @@ nav {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
+  }
+
+  .input-styling {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 750px) {
+
+  .select-container {
+    min-height: 100px;
+  }
+
+  .option-format{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 751px) {
+  .option-format {
+    display: inline-block;
+    flex-direction: row;
   }
 }

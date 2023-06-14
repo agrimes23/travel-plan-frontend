@@ -6,8 +6,8 @@ const ActivityOptions = (props) => {
 
     return (
         <>
-        <form className="d-flex justify-content-center row">
-                <select className="m-3" size="5">
+        <form className="d-flex justify-content-center row input-styling">
+                <select className="m-3 select-container" size="5">
                     { props.tripPlan.activities ? props.tripPlan.activities.map((activity) => {
                         return (
                             <>

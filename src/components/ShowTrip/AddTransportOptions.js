@@ -20,7 +20,7 @@ const AddTransportOptions = (props) => {
                         <h3>Add Transportation to the List Options:</h3>
                         <div>
                             <form onSubmit={handleSubmit}>
-                                <div>
+                                <div className="option-format">
                                     <div className="d-inline-block row m-2">
                                         <label htmlFor='company name'>Transport Company</label>
                                         <input name="transportCompany" value={newTripDetails.transportCompany} onChange={handleChange} placeholder="transport company" />

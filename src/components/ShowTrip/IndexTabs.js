@@ -33,12 +33,12 @@ const IndexTabs = (props) => {
 
     return (
         <>
-        <div className="container border px-5 py-3 d-flex row">
-            <div className="tab-row d-flex col">
+        <div className="container border px-2 py-3 d-flex row">
+            <div className="d-flex p-0 col tab-styling">
 
                     {tabHeaders.map(tab => (
                         <ButtonToggle 
-                        className="btn rounded-0 flex-fill"
+                        className="btn rounded-0 flex-fill "
                         key={tab}
                         active={active === tab}
                         onClick={() => setActive(tab)}

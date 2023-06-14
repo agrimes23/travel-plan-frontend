@@ -24,7 +24,7 @@ import useNavigate from 'react-router-dom'
                 <h3>Add an Activity to the List Options:</h3>
                 <div>
                     <form onSubmit={handleSubmit}>
-                        <div>
+                        <div className="option-format">
                             <div className="d-inline-block row m-2">
                                 <label htmlFor='Activty Name'>Activty Name</label>
                                 <input name="actName" placeholder='activity name' value={newTripDetails.actName} onChange={handleChange}/>

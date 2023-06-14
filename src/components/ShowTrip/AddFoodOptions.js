@@ -24,7 +24,7 @@ import useNavigate from 'react-router-dom'
                             <h3>Add Food to the List Options:</h3>
                             <div>
                                 <form onSubmit={handleSubmit}>
-                                    <div className="">
+                                    <div className="option-format">
                                         <div className="d-inline-block row m-2">
                                             <label htmlFor='Food Place Name'>Food Place Name</label>
                                             <input name="foodName" value={newTripDetails.foodName} onChange={handleChange} placeholder='food place name'/>
