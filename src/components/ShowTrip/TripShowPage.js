@@ -26,10 +26,10 @@ const TripShowPage = (props) => {
                 </div>
                 <div className="container-fluid justify-content-center d-flex mb-5 m-auto">
                     
-                    <div className="border p-5 rounded w-75">
+                    <div className="border p-5 rounded trip-show-contain">
                         <div className="">
                             <h2 className="bg-warning text-center">🛠️CURRENTLY WIP: backend routes are being tested and "add" buttons currently do not function🛠️</h2>
-                            <h2 className="">Est. Total: $</h2>
+                            <h2 className="mx-3">Est. Total: $</h2>
                         </div>
                         <div className="w-100 d-flex justify-content-center">
                         <IndexTabs tripPlan={props.tripPlan} tripId={props.tripPlan.id} handleAddHotel={props.handleAddHotel} handleAddActivity={props.handleAddActivity} handleAddFood={props.handleAddFood} handleAddTransport={props.handleAddTransport} />

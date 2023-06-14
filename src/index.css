@@ -111,6 +111,11 @@ nav {
 }
 
 /* --------------------- Trip Show Page --------------------- */
+
+.trip-show-contain {
+  max-width: 1000px;
+}
+
 .hotel-btn {
   background-color: purple;
   color: white;
