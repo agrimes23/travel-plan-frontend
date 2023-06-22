@@ -17,7 +17,11 @@ function App() {
 
   // get user info + all saved plans
   const getUserPlans = (data) => {
-    axios.get('https://travel-planning-backend.herokuapp.com/api/v1/userplans/' + data.id)
+
+    const token = localStorage.getItem('token');
+    const headers = { Authorization: `Bearer ${token}` };
+
+    axios.get(`https://travel-planning-backend.herokuapp.com/api/v1/userplans/${data.id}`)
     .then((res) => setUserPlans(res.data),
     (err) => console.log(err),
     
@@ -68,7 +72,6 @@ function App() {
     }
 
     const handleAddTransport = (addTransport, tripId) => {
-      console.log("app.js add transport: " + tripId)
       axios.put('https://travel-planning-backend.herokuapp.com/api/v1/userplans/addTransport/' + userPlans.id + "/" + tripId, addTransport)
       .then((response) => {
         getUserPlans()
