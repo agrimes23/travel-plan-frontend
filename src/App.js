@@ -35,7 +35,7 @@ function App() {
     const token = localStorage.getItem('token');
     const headers = { Authorization: `Bearer ${token}` };
 
-    axios.post('https://travel-planning-backend.herokuapp.com/api/v1/auth/register', addUser)
+    axios.post('http://localhost:8080/api/v1/auth/register', addUser)
     .then((res) => {
       getUserPlans(res.data)
     })
@@ -48,7 +48,7 @@ function App() {
   // }
 
   const handleLogin = (data) => {
-    axios.post('https://travel-planning-backend.herokuapp.com/api/v1/auth/authenticate', data)
+    axios.post('http://localhost:8080/api/v1/auth/authenticate', data)
       .then(response => {
         const { token } = response.data;
         // Store the JWT token securely
