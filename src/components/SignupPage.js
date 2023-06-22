@@ -15,7 +15,7 @@ const SignupPage = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.handleCreate(addUser)
+        props.handleCreateUser(addUser)
         navigate('/dashboard')
     }
 
