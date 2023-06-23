@@ -47,14 +47,14 @@ const HomePage = () => {
                         <h2 className="px-5 mb-5 bg-warning">Thank you for your patience!</h2>
 
                         <h3 className="sign-up-title mb-5">Start planning your trips!</h3>
-                        {/* <button onClick={signUpRedirect} className="btn btn-secondary sign-up-btn" disable>Sign up</button> */}
-                        <h2 className="bg-secondary sign-up-btn" disable>Sign up (disabled)</h2>
+                        {/* <button onClick={signUpRedirect} className="btn btn-secondary sign-up-btn">Sign up</button> */}
+                        <h2 className="bg-secondary sign-up-btn">Sign up (disabled)</h2>
                     </div>
                     <hr className="w-50" />
                     <div className="m-5 text-center">
                         <h5 className="log-in-title">Already got an account?</h5>
-                        {/* <a href="/login" className="login-btn">Login to your Account</a> */}
-                        <h2 className="login-btn">Login to your Account (disabled)</h2>
+                        <a href="/login" className="login-btn">Login to your Account</a>
+                        {/* <h2 className="login-btn">Login to your Account</h2> */}
                     </div>
                 </div>
             </div>

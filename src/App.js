@@ -9,7 +9,7 @@ import axios from 'axios'
 import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
 import NewTrip from './components/NewTrip';
-import jwt from 'jsonwebtoken'
+import jwt from 'jwt-decode'
 
 function App() {
 
@@ -17,17 +17,18 @@ function App() {
   const [tripPlan, setTripPlan] = useState({})
 
   // get user info + all saved plans, sends headers to 
-  const getUserPlans = (data) => {
+  const getUserPlans = (username) => {
 
     const token = localStorage.getItem('token');
     const headers = { Authorization: `Bearer ${token}` };
 
-    axios.get(`http://localhost:8080/api/v1/userplans/${data.id}`, {headers})
+    axios.get(`http://localhost:8080/api/v1/userplans/${username}`, {headers})
     .then((res) => setUserPlans(res.data),
     (err) => console.log(err),
     
     )
   }
+
 
   // create new user in db
   const handleCreateUser = (addUser) => {
@@ -38,6 +39,9 @@ function App() {
     axios.post('http://localhost:8080/api/v1/auth/register', addUser)
     .then((res) => {
       getUserPlans(res.data)
+    })
+    .catch((error) => {
+      console.log(error);
     })
   }
 
@@ -51,13 +55,11 @@ function App() {
     axios.post('http://localhost:8080/api/v1/auth/authenticate', data)
       .then(response => {
         const { token } = response.data;
-        // Store the JWT token securely
-        localStorage.setItem('token', token);
   
-        // Decode the JWT token to get the user information if needed
-        const decodedToken = jwt.decode(token);
-        const { id } = decodedToken;
-          getUserPlans({ id });
+        const decodedToken = jwt(token);
+        localStorage.setItem('token', token);
+        console.log(decodedToken.sub)
+        getUserPlans(decodedToken.sub);
       })
       .catch(error => {
         console.log(error);
@@ -122,7 +124,7 @@ function App() {
 
   return (
     <>
-      <Navbar handleLogin={handleLogin} />
+      <Navbar handleLogin={handleLogin} userPlans={userPlans}/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/dashboard" element={<Dashboard handleDelete={handleDelete} setTripPlan={setTripPlan} userPlans={userPlans}/>}/>
