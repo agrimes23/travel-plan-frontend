@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom'
 
 
 const NewTrip = (props) => {
-    const newEntry = props.userPlans.tripPlans.length
-    const [newTripDetails, setNewTripDetails] = useState({...props.userPlans.tripPlans[newEntry]})
+    // const newEntry = props.userPlans.tripPlans.length
+    // const [newTripDetails, setNewTripDetails] = useState({...props.userPlans.tripPlans[newEntry]})
+    const [newTripDetails, setNewTripDetails] = useState({...props.userPlans.tripPlans})
     const navigate = useNavigate();
     
 
@@ -26,7 +27,8 @@ const NewTrip = (props) => {
                     <div className="col d-flex justify-content-center text-center mt-5 p-2">
                         <form onSubmit={handleSubmit} className='row'>
 
-                            <label htmlFor='id'>Please write: 0{newEntry + 1}</label>
+                            {/* <label htmlFor='id'>Please write: 0{newEntry + 1}</label> */}
+                            <label htmlFor='id'>Please write: 0{1}</label>
                             <input placeholder='id' name="id" value={newTripDetails.id} onChange={handleChange} />
 
                             <label htmlFor='enter trip location'>Enter Trip Location </label>

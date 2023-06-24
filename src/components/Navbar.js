@@ -25,7 +25,7 @@ const Navbar = (props) => {
                 <Link to='/'><img className="logo" src={ImageLogo} alt="logo-map-planner-img"/></Link>
                 <div >
                     <ul className="nav navbar-nav navbar-right text-white mx-3">
-                        { props.userPlans ? null : <Link className=" text-decoration-none dash" onClick={handleClick} to='/dashboard'><li>My Dashboard</li></Link>}
+                        { props.userPlans !== null ? <Link className=" text-decoration-none dash" onClick={handleClick} to='/dashboard'><li>My Dashboard</li></Link> : null}
                     </ul>
                 </div>
             </nav>

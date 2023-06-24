@@ -36,7 +36,7 @@ function App() {
     const token = localStorage.getItem('token');
     const headers = { Authorization: `Bearer ${token}` };
 
-    axios.post('http://localhost:8080/api/v1/auth/register', addUser)
+    axios.post('http://localhost:8080/api/v1/auth/register', addUser, {headers})
     .then((res) => {
       getUserPlans(res.data)
     })
@@ -75,7 +75,10 @@ function App() {
 
   // updates notes or state in the database
   const handleUpdate = (updatePlan) => {
-    axios.put('https://travel-planning-backend.herokuapp.com/api/v1/userplans/addTrip/' + userPlans.id, updatePlan)
+    const token = localStorage.getItem('token');
+    const headers = { Authorization: `Bearer ${token}` };
+
+    axios.put(`http://localhost:8080/api/v1/userplans/addTrip/${userPlans.id}`, updatePlan, {headers})
     .then((response) => {
       getUserPlans()
     })
