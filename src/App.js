@@ -10,11 +10,15 @@ import SignupPage from './components/SignupPage';
 import LoginPage from './components/LoginPage';
 import NewTrip from './components/NewTrip';
 import jwt from 'jwt-decode'
+import { useNavigate } from 'react-router-dom'
 
 function App() {
 
   const [userPlans, setUserPlans] = useState([])
   const [tripPlan, setTripPlan] = useState({})
+  const [loginFail, setLoginFail] = useState(false)
+
+  const navigate = useNavigate()
 
   // get user info + all saved plans, sends headers to 
   const getUserPlans = (username) => {
@@ -52,17 +56,20 @@ function App() {
   // }
 
   const handleLogin = (data) => {
+
     axios.post('http://localhost:8080/api/v1/auth/authenticate', data)
       .then(response => {
         const { token } = response.data;
-  
+        console.log(response)
         const decodedToken = jwt(token);
         localStorage.setItem('token', token);
-        console.log(decodedToken.sub)
         getUserPlans(decodedToken.sub);
+        navigate('/dashboard')
       })
       .catch(error => {
-        console.log(error);
+        // if password fails
+        setLoginFail(true)
+        console.log("This is an error bad password: ", error.response.status);
       });
   };
 
@@ -133,7 +140,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard handleDelete={handleDelete} setTripPlan={setTripPlan} userPlans={userPlans}/>}/>
         <Route path="/tripdetails" element={<TripShowPage handleNewItinerary={handleNewItinerary} tripPlan={tripPlan} userPlans={userPlans} handleAddHotel={handleAddHotel} handleAddActivity={handleAddActivity} handleAddFood={handleAddFood} handleAddTransport={handleAddTransport} />} />
         <Route path="/signup" element={<SignupPage handleCreateUser={handleCreateUser}/>} />
-        <Route path="/login" element={<LoginPage handleLogin={handleLogin} />} />
+        <Route path="/login" element={<LoginPage handleLogin={handleLogin} loginFail={loginFail} />} />
         <Route path="/newtrip" element={<NewTrip handleUpdate={handleUpdate} userPlans={userPlans} />} />
       </Routes>
     </>

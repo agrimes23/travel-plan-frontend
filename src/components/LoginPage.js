@@ -12,11 +12,16 @@ const LoginPage = (props) => {
     }
 
     const handleSubmit = (e) => {
+        console.log("login page code in handle submit ")
         e.preventDefault()
         props.handleLogin(user)
-        navigate('/dashboard')
+
         
     }
+
+    useEffect (() => {
+
+    }, [props.loginFail])
 
     return (
         <>
@@ -29,6 +34,7 @@ const LoginPage = (props) => {
                                 <input type="text" name="username" placeholder="username" onChange={handleChange}/>
                             </div>
                             <div className="m-3">
+                                {props.loginFail ? <h6 className="text-danger bg-dark">Password incorrect, please try again</h6> : null}
                                 <label className='mx-3' htmlFor='type password'>Password: </label>
                                 <input type="password" name="password" placeholder="password" onChange={handleChange} />
                             </div>

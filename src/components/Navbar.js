@@ -16,7 +16,7 @@ const Navbar = (props) => {
     }
 
     useEffect (() => {
-        console.log("The user plan is: " + props.userPlans)
+
     } , [props.userPlans])
 
     return (
